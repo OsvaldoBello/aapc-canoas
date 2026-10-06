@@ -1,8 +1,9 @@
 # DOCUMENTO MESTRE DO PROJETO (MASTER SPEC)
 ## Portal Voluntário & Captação Solidária — ONG AAPC Canoas
-> **Documento Vivo do Projeto** — Versão 1.0 (Fase 1: Planejamento & Arquitetura)  
-> **Status Atual**: Fase 1 Concluída / Aguardando Aprovação para Fase 2  
+> **Documento Vivo do Projeto** — Versão 2.0 (Fase 2: Protótipo Visual Funcional Validado)  
+> **Status Atual**: Fase 1 e Fase 2 Concluídas / Pronto para Fase 3 (Deploy Vercel)  
 > **Repositório**: `c:\Users\Osvaldo\OneDrive\Desktop\AAPC`  
+> **Servidor de Teste Local**: `http://localhost:3000` (Ativo)  
 > **Target de Hospedagem**: Vercel
 
 ---
@@ -17,8 +18,8 @@ O portal foi concebido com uma missão central: **multiplicar o engajamento comu
 | Entrega | Fase | Descrição | Status |
 | :--- | :--- | :--- | :--- |
 | **Entrega 1** | **Fase 1: Planejamento Mestre** | Dossiê da ONG, levantamento do benchmark, arquitetura de informação, design tokens e MD Mestre do projeto. | 🟢 **Concluído** |
-| **Entrega 2** | **Fase 2: Protótipo Visual Funcional** | Criação da aplicação web com layout responsivo, sistema de ondulações, paleta AAPC, modal interativo de PIX (QR Code e Copia-e-Cola funcional) e seções de projetos. | 🟡 **Pronto para Execução** |
-| **Entrega 3** | **Fase 3: Site Final & Deploy Vercel** | Otimização final de SEO, testes de acessibilidade, auditoria de performance (Lighthouse 95+) e publicação ativa na Vercel. | ⚪ **Pendente** |
+| **Entrega 2** | **Fase 2: Protótipo Visual Funcional** | Criação da aplicação web com layout responsivo, sistema de ondulações, paleta AAPC, modal interativo de PIX (QR Code e Copia-e-Cola funcional), carrossel de fotos, seções de projetos e validação rigorosa de UX/UI no navegador. | 🟢 **Concluído & Validado** |
+| **Entrega 3** | **Fase 3: Site Final & Deploy Vercel** | Otimização final de SEO, testes de acessibilidade, auditoria de performance (Lighthouse 95+) e publicação ativa na Vercel. | 🟡 **Pronto para Execução** |
 
 ---
 
@@ -221,24 +222,25 @@ A aplicação será estruturada com navegação fluida em página única com ân
 
 ## 8. Critérios de Aceitação & Validação por Fase
 
-### Fase 1 (Planejamento & Dossiê Mestre) — [STATUS: ATUAL]
+### Fase 1 (Planejamento & Dossiê Mestre) — [STATUS: CONCLUÍDO]
 - [x] Instagram da ONG devidamente analisado com extração de CNPJ, chave PIX, endereço e projetos.
 - [x] Estrutura do Transformar RS mapeada para reaproveitamento dos padrões vencedores de UX.
 - [x] Documento Mestre `PROJECT_MASTER.md` redigido e salvo na raiz do repositório.
 - [x] Artefatos do Superpowers persistidos em `artifacts/superpowers/brainstorm.md` e `plan.md`.
-- [ ] **Aprovação do Usuário** para avanço à Fase 2.
+- [x] Aprovação do Usuário registrada.
 
-### Fase 2 (Protótipo Visual Funcional)
-- [ ] Aplicação executável localmente com `npm run dev` e preview navegável.
-- [ ] Logomarca oficial da AAPC aplicada com a paleta Verde e Azul.
-- [ ] Ondulações orgânicas funcionando de forma responsiva entre as seções.
-- [ ] Modal de Doação abrindo ao clicar em "Doe agora", com botão "Copiar Chave PIX" funcional e QR code exibido.
-- [ ] Seção de projetos com cards dedicados ao *Pegue e Leve*, *Bichinhos Caridosos*, *Brechó Solidário* e *Pizzas Solidárias*.
-- [ ] Formulário de "Seja Voluntário!" funcional.
+### Fase 2 (Protótipo Visual Funcional) — [STATUS: CONCLUÍDO & VALIDADO]
+- [x] Aplicação executável localmente com servidor ativo em `http://localhost:3000`.
+- [x] Logomarca oficial da AAPC aplicada com a paleta Verde e Azul.
+- [x] Ondulações orgânicas funcionando de forma responsiva entre as seções.
+- [x] Modal de Doação abrindo ao clicar em "Doe agora", com botão "Copiar Chave PIX" funcional e QR code exibido.
+- [x] Seção de projetos com cards dedicados ao *Pegue e Leve*, *Bichinhos Caridosos*, *Brechó Solidário*, *Pizzas Solidárias* e *Socorro Emergencial*.
+- [x] Formulário de "Seja Voluntário!" funcional integrado ao WhatsApp.
+- [x] Validação rigorosa de UX/UI concluída nos viewports Desktop e Mobile via navegador.
 
-### Fase 3 (Site em Produção na Vercel)
-- [ ] Build de produção sem nenhum erro (`npm run build`).
-- [ ] Deploy concluído na Vercel gerando domínio ativo HTTPS.
+### Fase 3 (Site em Produção na Vercel) — [STATUS: PRONTO PARA DISPARO]
+- [ ] Configuração de deploy e otimização para Vercel.
+- [ ] Publicação concluída na Vercel gerando domínio ativo HTTPS.
 - [ ] Teste de navegação e fluxo de doação realizado diretamente na URL pública da Vercel.
 
 ---
