@@ -30,10 +30,12 @@ def process_photos():
     # 3. Bichinhos Caridosos: Voluntárias no Hospital Criança Conceição
     # Original: public/img/real/foto_feed_1.jpg (361x640)
     im_bichinhos = Image.open("public/img/real/foto_feed_1.jpg")
-    crop_bichinhos = im_bichinhos.crop((0, 135, 361, 495)) # Sem barra preta superior
-    crop_bichinhos = crop_bichinhos.resize((720, 720), Image.Resampling.LANCZOS)
+    crop_bichinhos = im_bichinhos.crop((0, 184, 361, 455)) # Enquadramento exato sem barras pretas
+    crop_bichinhos = crop_bichinhos.resize((800, 600), Image.Resampling.LANCZOS)
     enhancer = ImageEnhance.Sharpness(crop_bichinhos)
     crop_bichinhos = enhancer.enhance(1.2)
+    crop_bichinhos.save("public/img/fotos/bichinhos-caridosos.jpg", quality=95)
+    crop_bichinhos.save("img/fotos/bichinhos-caridosos.jpg", quality=95)
     crop_bichinhos.save("public/img/fotos_otimizadas/bichinhos-caridosos.jpg", quality=95)
     crop_bichinhos.save("img/fotos_otimizadas/bichinhos-caridosos.jpg", quality=95)
     print("Bichinhos Caridosos saved")
