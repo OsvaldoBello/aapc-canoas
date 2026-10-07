@@ -1,0 +1,34 @@
+{
+  "metricas": [
+    {
+      "rotulo": "Marmitas e cestas entregues",
+      "valor": "+15 mil",
+      "fonte": "Estimativa anterior do dossiê",
+      "verificado": false
+    },
+    {
+      "rotulo": "Famílias e crianças atendidas",
+      "valor": "+800",
+      "fonte": "Estimativa anterior do dossiê",
+      "verificado": false
+    }
+  ],
+  "sede": {
+    "endereco": "Rua Sete Povos, 312",
+    "bairro": "Marechal Rondon",
+    "cidade": "Canoas",
+    "estado": "RS",
+    "cep": "92020-430",
+    "googleMapsUrl": "https://maps.google.com/?q=Rua+Sete+Povos+312+Canoas+RS",
+    "horariosAtendimento": "Segunda a sábado, das 9h às 17h",
+    "horarioConfirmado": false
+  },
+  "contato": {
+    "whatsappCoord": "5551984654846",
+    "whatsappBrecho": "5551981334287",
+    "instagram": "@ong_aapc_",
+    "instagramUrl": "https://www.instagram.com/ong_aapc_/",
+    "cnpj": "59.074.303/0001-00",
+    "chavePix": "59074303000100"
+  }
+}

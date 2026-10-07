@@ -1,4 +1,4 @@
-# Superpowers Brainstorm — Portal Voluntário ONG AAPC
+# Superpowers Brainstorm: Portal Voluntário ONG AAPC
 
 ## Goal
 Desenvolver um website institucional e de captação voluntária de alto impacto para a **ONG Associação Amigos e Parceiros de Canoas (AAPC)**, sediada em Canoas/RS. O portal deve tomar como referência estrutural e de UX o website da **Transformar RS** (layout dinâmico com ondulações, foco estratégico em doação via PIX, seções de história, projetos e voluntariado), aplicando com rigor a identidade visual e as cores da AAPC (Verde e Azul da logomarca oficial) e preparando a solução para hospedagem na **Vercel**.
@@ -51,14 +51,14 @@ O projeto é estruturado em três macro-entregas:
 
 ---
 
-## Options (2–4)
-- **Opção 1 (Recomendada) — Vite Single-Page Application Modular com Roteamento por Seções / Hash e Subpáginas Limpas**:
+## Options (2 a 4)
+- **Opção 1 (Recomendada): Vite Single-Page Application Modular com Roteamento por Seções / Hash e Subpáginas Limpas**:
   - Arquitetura extremamente rápida com Vite, CSS moderno Vanilla (Custom Properties, Flexbox/Grid, SVG wave dividers), componentes modulares e zero overhead de runtime.
   - Perfeito para Vercel (build em segundos, CDN global, cache automático).
   - Inclui modal interativo de PIX, carrossel de hero, filtros de projetos e formulário interativo de voluntariado com integração para WhatsApp/E-mail.
-- **Opção 2 — Next.js (App Router) com React e Tailwind**:
+- **Opção 2: Next.js (App Router) com React e Tailwind**:
   - Ecossistema robusto, porém com complexidade desnecessária para um portal institucional de ONG, demandando mais bundles JS e tempo de carregamento em redes móveis 3G/4G no RS.
-- **Opção 3 — Multi-Página HTML Tradicional estática pura (sem bundler)**:
+- **Opção 3: Multi-Página HTML Tradicional estática pura (sem bundler)**:
   - Muito simples, porém com perda de ergonomia de desenvolvimento, repetição de headers/footers e menor fluidez nas transições de prototipagem.
 
 ---

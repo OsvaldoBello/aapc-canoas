@@ -1,4 +1,4 @@
-# Superpowers Execution Log — Portal Voluntário ONG AAPC
+# Superpowers Execution Log: Portal Voluntário ONG AAPC
 
 ## Step 1: Planejamento & Dossiê Mestre (Fase 1)
 - **Files changed**:

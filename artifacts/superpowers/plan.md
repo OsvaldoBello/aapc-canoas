@@ -1,4 +1,4 @@
-# Superpowers Implementation Plan — Portal Voluntário ONG AAPC
+# Superpowers Implementation Plan: Portal Voluntário ONG AAPC
 
 ## Goal
 Construir e disponibilizar o portal web para a ONG AAPC Canoas, inspirado na arquitetura de alto engajamento da Transformar RS, com foco em captação de doações via PIX, apresentação da história, catálogo de projetos comunitários e canal para voluntariado, pronto para implantação na Vercel.

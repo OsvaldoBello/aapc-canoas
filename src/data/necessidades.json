@@ -1,0 +1,29 @@
+{
+  "atualizadaEm": "2026-10-04",
+  "endereco": "Rua Sete Povos, 312",
+  "bairro": "Marechal Rondon, Canoas/RS",
+  "horario": "seg a sáb, 9h às 17h",
+  "horarioConfirmado": false,
+  "itens": [
+    {
+      "nome": "Leite integral (caixa 1L)",
+      "status": "urgente"
+    },
+    {
+      "nome": "Fralda infantil tamanho G",
+      "status": "pouco"
+    },
+    {
+      "nome": "Feijão e arroz (pacotes de 1kg)",
+      "status": "urgente"
+    },
+    {
+      "nome": "Óleo de cozinha",
+      "status": "pouco"
+    },
+    {
+      "nome": "Cobertores de casal e agasalhos",
+      "status": "ok por enquanto"
+    }
+  ]
+}
