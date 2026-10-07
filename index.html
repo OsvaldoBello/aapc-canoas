@@ -3,401 +3,548 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ONG AAPC Canoas | Associação Amigos e Parceiros de Canoas</title>
   
-  <meta name="description" content="Associação comunitária em Canoas/RS tocada por voluntários para doação de alimentos, agasalhos (Pegue e Leve) e apoio hospitalar infantil (Bichinhos Caridosos).">
-  <meta name="author" content="Associação Amigos e Parceiros de Canoas">
-  <meta name="theme-color" content="#009639">
-
-  <!-- OpenGraph -->
+  <title>AAPC Canoas · Amor & Solidariedade</title>
+  <meta name="description" content="Associação Amigos e Parceiros de Canoas (AAPC). Entrega direta de cestas de alimentos, roupas, agasalhos e acolhimento humano a famílias de Canoas/RS.">
+  
+  <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="ONG AAPC Canoas | Associação Amigos e Parceiros de Canoas">
-  <meta property="og:description" content="Apoio comunitário, cestas de alimentos, araras de roupas e voluntariado em Canoas/RS. Ajude com PIX ou traga sua doação à sede.">
-  <meta property="og:image" content="/img/logo-aapc.png">
-  <meta property="og:url" content="https://aapc-canoas.vercel.app">
-
-  <!-- Favicon -->
+  <meta property="og:title" content="AAPC Canoas · Amor & Solidariedade">
+  <meta property="og:description" content="Associação Amigos e Parceiros de Canoas: apoio direto a famílias de Canoas com alimentos, roupas e voluntariado.">
+  <meta property="og:image" content="/img/fotos/hero-equipe.jpg">
+  
   <link rel="icon" type="image/png" href="/img/logo-aapc.png">
-
-  <!-- Google Fonts exclusivas da direção visual: Archivo, Atkinson Hyperlegible Next e Atkinson Hyperlegible Mono -->
+  
+  <!-- Google Fonts: Poppins (Títulos) + DM Sans (Corpo) + JetBrains Mono (Dados) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@800&family=Atkinson+Hyperlegible+Next:ital,wght@0,400;0,600;1,400&family=Atkinson+Hyperlegible+Mono:wght@400;600&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=Poppins:wght@500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="/src/style.css">
 </head>
 <body>
 
-  <!-- Cabeçalho institucional simples -->
-  <header class="site-header" role="banner">
+  <!-- =========================================================================
+       Cabeçalho Fixo
+       ========================================================================= -->
+  <header class="site-header" id="topo">
     <div class="container header-container">
-      <a class="logo-link" href="#topo" aria-label="AAPC Canoas: voltar ao topo">
-        <img src="/img/logo-aapc.png" alt="Logomarca da AAPC Canoas" class="logo-img">
-        <div>
+      <a href="#topo" class="logo-link" aria-label="AAPC Canoas - Início">
+        <img src="/img/logo-aapc.png" alt="Logotipo AAPC" class="logo-img" width="46" height="46">
+        <div class="logo-texto">
           <span class="logo-titulo">AAPC CANOAS</span>
-          <span class="logo-sub">Rua Sete Povos, 312</span>
+          <span class="logo-sub">Amor & Solidariedade</span>
         </div>
       </a>
 
-      <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="nav-principal" aria-label="Abrir menu de navegação">
-        Menu
-      </button>
-
-      <nav class="nav-principal" id="nav-principal" role="navigation" aria-label="Navegação principal">
+      <nav class="nav-principal" id="nav-principal" aria-label="Navegação do site">
+        <a href="#topo" class="nav-link">Início</a>
+        <a href="#historia" class="nav-link">Nossa Atuação</a>
+        <a href="#o-que-doar" class="nav-link">O Que Doar</a>
         <a href="#projetos" class="nav-link">Projetos</a>
-        <a href="#voluntariado" class="nav-link">Voluntariado</a>
-        <a href="#onde-estamos" class="nav-link">Onde estamos</a>
-        <a href="#pix" class="btn-header-pix">Doar via PIX</a>
+        <a href="#voluntariado" class="nav-link">Seja Voluntário</a>
+        <a href="#onde-estamos" class="nav-link">Onde Estamos</a>
+        <a href="#pix" class="btn btn-header-pix">Doar via PIX</a>
       </nav>
+
+      <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="nav-principal" aria-label="Abrir menu de navegação">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </header>
 
-  <main id="conteudo-principal">
-    <!-- Hero com cartão "Falta esta semana" -->
-    <section class="secao-hero" id="topo" aria-labelledby="titulo-hero">
+  <main>
+    <!-- =========================================================================
+         Hero Section Dinâmico & Acolhedor
+         ========================================================================= -->
+    <section class="secao-hero">
       <div class="container hero-grid">
         <div class="hero-chamada">
-          <h1 id="titulo-hero">Comida, roupa e acolhimento para quem mora perto.</h1>
+          <div class="tag-hero">
+            <span class="ponto-verde"></span> Ação Comunitária em Canoas/RS
+          </div>
+          <h1>Cada doação transforma a vida de uma família perto de você.</h1>
           <p class="hero-descricao">
-            A Associação Amigos e Parceiros de Canoas reúne moradores voluntários para entregar alimentos, agasalhos e apoio direto a famílias de Canoas.
+            A Associação Amigos e Parceiros de Canoas é mantida por voluntários locais que entregam alimentos, agasalhos e acolhimento direto às famílias da nossa comunidade.
           </p>
           <div class="hero-acoes">
-            <a href="#pix" class="btn-primario">Doar via PIX</a>
-            <a href="#falta-semana" class="link-secundario-hero">Levar doação na sede &rarr;</a>
+            <a href="#pix" class="btn btn-primario">
+              Doar via PIX agora <span class="seta-btn">→</span>
+            </a>
+            <a href="#o-que-doar" class="btn btn-secundario">
+              O que você pode doar
+            </a>
+          </div>
+          
+          <div class="hero-badges">
+            <div class="badge-item">
+              <strong>Sede própria</strong>
+              <span>Rua Sete Povos, 312</span>
+            </div>
+            <div class="badge-divisor" aria-hidden="true"></div>
+            <div class="badge-item">
+              <strong>100% Voluntário</strong>
+              <span>Apoio direto sem intermediários</span>
+            </div>
+            <div class="badge-divisor" aria-hidden="true"></div>
+            <div class="badge-item">
+              <strong>Transparência</strong>
+              <span>CNPJ 59.074.303/0001-00</span>
+            </div>
           </div>
         </div>
 
-        <aside class="cartao-kraft" id="falta-semana" aria-label="Itens que estão em falta esta semana">
-          <span class="rotulo-fita">Falta esta semana</span>
-          
-          <div id="lista-necessidades-container">
-            <ul class="itens-falta">
-              <li class="item-falta-linha">
-                <span class="item-nome">Leite integral (caixa 1L)</span>
-                <span class="item-status status-urgente">urgente</span>
-              </li>
-              <li class="item-falta-linha">
-                <span class="item-nome">Fralda infantil G</span>
-                <span class="item-status status-pouco">pouco</span>
-              </li>
-              <li class="item-falta-linha">
-                <span class="item-nome">Feijão e arroz (1kg)</span>
-                <span class="item-status status-urgente">urgente</span>
-              </li>
-              <li class="item-falta-linha">
-                <span class="item-nome">Óleo de cozinha</span>
-                <span class="item-status status-pouco">pouco</span>
-              </li>
-              <li class="item-falta-linha">
-                <span class="item-nome">Cobertores e agasalhos</span>
-                <span class="item-status status-ok">ok por enquanto</span>
-              </li>
-            </ul>
+        <div class="hero-visual">
+          <div class="hero-card-foto">
+            <img src="/img/fotos/hero-equipe.jpg" alt="Voluntários da AAPC uniformizados com fardos de mantimentos na sede da Rua Sete Povos" class="hero-foto-principal">
+            <div class="hero-floating-card">
+              <span class="icone-card">🤝</span>
+              <div>
+                <p class="floating-titulo">Equipe AAPC na Sede</p>
+                <p class="floating-sub">Triagem e entrega de donativos em Canoas</p>
+              </div>
+            </div>
           </div>
-
-          <!-- TODO: confirmar horários exatos da sede com a AAPC -->
-          <p class="kraft-rodape" id="necessidades-rodape-info">
-            Atualizada em 04/10 · Rua Sete Povos, 312 · seg a sáb, 9h às 17h
-          </p>
-        </aside>
-      </div>
-
-      <!-- Foto real da ação comunitária no Instagram da AAPC -->
-      <div class="container foto-larga-wrap">
-        <figure>
-          <img src="/img/fotos/hero-voluntarios-canoas.jpg" alt="Voluntários da AAPC Canoas organizando fardos de água mineral e alimentos para doação" loading="lazy">
-          <figcaption>Voluntários da AAPC Canoas organizando fardos de mantimentos na sede (foto real divulgada pela coordenação).</figcaption>
-        </figure>
+        </div>
       </div>
     </section>
 
-    <!-- Projetos em lista editorial alternada (sem grid de cards) -->
-    <section class="secao-projetos" id="projetos" aria-labelledby="titulo-projetos">
-      <div class="container">
-        <h2 class="secao-titulo-editorial" id="titulo-projetos">Projetos em andamento</h2>
+    <!-- =========================================================================
+         Nossa Atuação / Quem Somos (2 Colunas dinâmicas estilo Transformar RS)
+         ========================================================================= -->
+    <section class="secao-historia" id="historia">
+      <div class="container historia-grid">
+        <div class="historia-texto">
+          <span class="subtitulo-secao">Nossa Atuação</span>
+          <h2 class="titulo-secao">Solidariedade que nasce de vizinhos para vizinhos</h2>
+          <p>
+            A AAPC nasceu da união de moradores de Canoas que entenderam que a transformação social começa na porta ao lado. No galpão comunitário da Rua Sete Povos, recebemos, triamos e distribuímos doações diretamente para as pessoas mais vulneráveis da cidade.
+          </p>
+          <p>
+            Atuamos em diversas frentes: na distribuição contínua de cestas de mantimentos, no acolhimento de famílias em bairros ribeirinhos, em doações para lares geriátricos locais (como Asilo Flor de Liz, Asilo Germânia e Lar São Miguel) e em ações de alívio emergencial.
+          </p>
+          <blockquote class="citacao-destaque">
+            <p>"Um gesto de amor pode mudar uma vida."</p>
+            <cite>Lema oficial da AAPC Canoas</cite>
+          </blockquote>
+        </div>
 
-        <div class="lista-projetos-editorial">
-          <!-- Projeto 1: Pegue e Leve -->
-          <article class="projeto-linha">
-            <div class="projeto-texto">
-              <span class="rotulo-fita-inline">Pegue e Leve</span>
-              <h3>Araras de roupas no Harmonia e em praças</h3>
-              <p>
-                Estruturas comunitárias montadas no Bairro Harmonia e em praças de Canoas com roupas, calçados e agasalhos higienizados. Quem precisa escolhe o que levar com total respeito e liberdade.
-              </p>
-              <div class="projeto-precisa">
-                O que precisa: agasalhos masculinos e infantis, calçados fechados e cobertores limpos.
-              </div>
-              <a href="#pix" class="btn-link">Ajudar com doação &rarr;</a>
+        <div class="historia-visual">
+          <div class="card-historia-foto">
+            <img src="/img/fotos/entrega-prata-fatima.jpg" alt="Voluntárias da AAPC na entrega de cestas básicas na Comunidade do Prata no Bairro Fátima">
+            <div class="card-historia-info">
+              <span class="tag-historia">Ação no Bairro Fátima</span>
+              <p>Entrega direta de 60 cestas básicas na Comunidade do Prata</p>
             </div>
-            <div class="projeto-foto">
-              <figure>
-                <img src="/img/fotos/pegue-e-leve.jpg" alt="Cobertores e peças de inverno empilhados ao lado do banner oficial da AAPC" loading="lazy">
-              </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         O Que Você Pode Doar o Ano Todo (Substituição definitiva de "Falta esta semana")
+         ========================================================================= -->
+    <section class="secao-doacoes" id="o-que-doar">
+      <div class="container">
+        <div class="cabecalho-secao-centro">
+          <span class="subtitulo-secao">Como Ajudar</span>
+          <h2 class="titulo-secao">Itens essenciais que sempre fazem a diferença</h2>
+          <p class="descricao-secao-centro">
+            Não dependemos de campanhas pontuais: as necessidades das famílias são contínuas. Estes quatro grupos de itens são recebidos, organizados e distribuídos o ano inteiro em nossa sede.
+          </p>
+        </div>
+
+        <div class="grid-doacoes-essenciais">
+          <!-- Card 1: Alimentos -->
+          <div class="card-doacao">
+            <div class="card-doacao-topo">
+              <span class="card-doacao-icone">🥫</span>
+              <span class="card-doacao-categoria">Segurança Alimentar</span>
+            </div>
+            <h3>Alimentos Não Perecíveis</h3>
+            <p class="card-doacao-desc">
+              Montagem de cestas básicas completas para famílias cadastradas e em emergência.
+            </p>
+            <ul class="lista-itens-doacao">
+              <li>Arroz e feijão (pacotes de 1kg)</li>
+              <li>Leite integral em caixa</li>
+              <li>Óleo de soja e café</li>
+              <li>Massa, farinha de trigo e açúcar</li>
+            </ul>
+            <a href="#onde-estamos" class="link-acao-doacao">Onde entregar na sede →</a>
+          </div>
+
+          <!-- Card 2: Agasalhos & Roupas -->
+          <div class="card-doacao">
+            <div class="card-doacao-topo">
+              <span class="card-doacao-icone">🧥</span>
+              <span class="card-doacao-categoria">Vestuário & Dignidade</span>
+            </div>
+            <h3>Roupas, Calçados & Cobertores</h3>
+            <p class="card-doacao-desc">
+              Abastecimento das araras livres do Pegue e Leve e peças acessíveis no brechó.
+            </p>
+            <ul class="lista-itens-doacao">
+              <li>Cobertores e mantas térmicas limpos</li>
+              <li>Agasalhos, casacos e moletons</li>
+              <li>Calçados fechados (todos os números)</li>
+              <li>Roupas infantis e juvenis</li>
+            </ul>
+            <a href="#onde-estamos" class="link-acao-doacao">Onde entregar na sede →</a>
+          </div>
+
+          <!-- Card 3: Bebês & Crianças -->
+          <div class="card-doacao">
+            <div class="card-doacao-topo">
+              <span class="card-doacao-icone">👶</span>
+              <span class="card-doacao-categoria">Cuidado Infantil</span>
+            </div>
+            <h3>Fraldas & Itens Infantis</h3>
+            <p class="card-doacao-desc">
+              Apoio essencial para mães solos e visitas lúdicas a leitos pediátricos.
+            </p>
+            <ul class="lista-itens-doacao">
+              <li>Fraldas infantis (tamanhos M, G e XG)</li>
+              <li>Lenços umedecidos e pomadas</li>
+              <li>Fraldas geriátricas para idosos atendidos</li>
+              <li>Brinquedos e pelúcias em perfeito estado</li>
+            </ul>
+            <a href="#onde-estamos" class="link-acao-doacao">Onde entregar na sede →</a>
+          </div>
+
+          <!-- Card 4: Higiene & Limpeza -->
+          <div class="card-doacao">
+            <div class="card-doacao-topo">
+              <span class="card-doacao-icone">🧼</span>
+              <span class="card-doacao-categoria">Saúde & Higiene</span>
+            </div>
+            <h3>Higiene Pessoal & Limpeza</h3>
+            <p class="card-doacao-desc">
+              Kits de dignidade para lares acolhidos e famílias que enfrentam alagamentos.
+            </p>
+            <ul class="lista-itens-doacao">
+              <li>Sabonetes, escovas e cremes dentais</li>
+              <li>Sabão em barra e em pó</li>
+              <li>Água sanitária e desinfetantes</li>
+              <li>Absorventes higiênicos</li>
+            </ul>
+            <a href="#onde-estamos" class="link-acao-doacao">Onde entregar na sede →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         Projetos em Ação (Cards Dinâmicos e Modernos com Fotos Reais)
+         ========================================================================= -->
+    <section class="secao-projetos" id="projetos">
+      <div class="container">
+        <div class="cabecalho-secao-centro">
+          <span class="subtitulo-secao">Projetos em Ação</span>
+          <h2 class="titulo-secao">Iniciativas que acolhem a comunidade</h2>
+          <p class="descricao-secao-centro">
+            Conheça as ações práticas que mantemos vivas em Canoas graças à cooperação entre voluntários e apoiadores.
+          </p>
+        </div>
+
+        <div class="grid-projetos">
+          <!-- Projeto 1: Pegue e Leve -->
+          <article class="card-projeto">
+            <div class="projeto-foto-container">
+              <img src="/img/fotos/pegue-e-leve.jpg" alt="Voluntárias da AAPC na calçada com banner e araras comunitárias de roupas" class="projeto-foto">
+              <span class="projeto-badge-categoria">Comunidade</span>
+            </div>
+            <div class="projeto-conteudo">
+              <h3>Projeto Pegue e Leve</h3>
+              <p class="projeto-resumo">
+                Araras e estruturas comunitárias abertas montadas no Bairro Harmonia e praças públicas. Quem precisa escolhe roupas, agasalhos e calçados com total respeito e liberdade de escolha.
+              </p>
+              <div class="projeto-meta">
+                <span class="meta-label">Como apoiar:</span>
+                <span class="meta-valor">Doação de agasalhos limpos e calçados</span>
+              </div>
+              <a href="#onde-estamos" class="btn-projeto-link">Apoiar com doação →</a>
             </div>
           </article>
 
           <!-- Projeto 2: Bichinhos Caridosos -->
-          <article class="projeto-linha invertido">
-            <div class="projeto-texto">
-              <span class="rotulo-fita-inline">Bichinhos Caridosos</span>
-              <h3>Acolhimento no Hospital Criança Conceição</h3>
-              <p>
-                Voluntárias e voluntários visitam leitos pediátricos no Hospital Criança Conceição e lares de acolhimento. Levam bichinhos de pelúcia higienizados, cantigas e presença amiga para crianças internadas e suas famílias.
-              </p>
-              <div class="projeto-precisa">
-                O que precisa: brinquedos e pelúcias em perfeito estado para higienização prévia.
-              </div>
-              <a href="#pix" class="btn-link">Ajudar com doação &rarr;</a>
+          <article class="card-projeto">
+            <div class="projeto-foto-container">
+              <img src="/img/fotos/bichinhos-caridosos.jpg" alt="Voluntárias com camisetas da AAPC e crachá do Projeto Bichinhos Caridosos" class="projeto-foto">
+              <span class="projeto-badge-categoria">Humanização</span>
             </div>
-            <div class="projeto-foto">
-              <figure>
-                <img src="/img/fotos/bichinhos-caridosos.jpg" alt="Voluntárias da AAPC com camiseta institucional e distintivo Bichinhos Caridosos" loading="lazy">
-              </figure>
+            <div class="projeto-conteudo">
+              <h3>Bichinhos Caridosos</h3>
+              <p class="projeto-resumo">
+                Visitas de acolhimento a leitos pediátricos no Hospital Criança Conceição e lares de acolhimento. Levamos brinquedos higienizados, cantigas e presença amiga para crianças internadas.
+              </p>
+              <div class="projeto-meta">
+                <span class="meta-label">Como apoiar:</span>
+                <span class="meta-valor">Brinquedos novos ou pelúcias higienizadas</span>
+              </div>
+              <a href="#onde-estamos" class="btn-projeto-link">Apoiar com doação →</a>
             </div>
           </article>
 
-          <!-- Projeto 3: Brechó e Cestas de Alimentos -->
-          <article class="projeto-linha">
-            <div class="projeto-texto">
-              <span class="rotulo-fita-inline">Brechó e Alimentos</span>
-              <h3>Cestas de mantimentos e brechó na sede</h3>
-              <p>
-                Ponto permanente na Rua Sete Povos, 312, para triagem e montagem de cestas básicas de alimentos não perecíveis. O brechó solidário com valores simbólicos ajuda a cobrir custos de transporte e água para a comunidade.
-              </p>
-              <div class="projeto-precisa">
-                O que precisa: arroz, feijão, leite integral, óleo, massa e farinha.
-              </div>
-              <a href="#pix" class="btn-link">Ajudar com doação &rarr;</a>
+          <!-- Projeto 3: Cestas & Brechó -->
+          <article class="card-projeto">
+            <div class="projeto-foto-container">
+              <img src="/img/fotos/cestas-alimentos.jpg" alt="Voluntários organizando fardos de alimentos e produtos de higiene no porta-malas" class="projeto-foto">
+              <span class="projeto-badge-categoria">Sede Sete Povos</span>
             </div>
-            <div class="projeto-foto">
-              <figure>
-                <img src="/img/fotos/brecho-e-alimentos.jpg" alt="Porta-malas carregado com fardos de cestas básicas de alimentos e voluntários da AAPC" loading="lazy">
-              </figure>
+            <div class="projeto-conteudo">
+              <h3>Cestas Básicas & Brechó Solidário</h3>
+              <p class="projeto-resumo">
+                Ponto permanente na Rua Sete Povos, 312 para montagem de cestas de alimentos. O brechó solidário na sede ajuda a levantar recursos para cobrir transporte e alimentação de emergência.
+              </p>
+              <div class="projeto-meta">
+                <span class="meta-label">Como apoiar:</span>
+                <span class="meta-valor">Alimentos não perecíveis e peças para o brechó</span>
+              </div>
+              <a href="#onde-estamos" class="btn-projeto-link">Apoiar com doação →</a>
             </div>
           </article>
 
-          <!-- Projeto 4: Pizzas Solidárias -->
-          <article class="projeto-linha invertido">
-            <div class="projeto-texto">
-              <span class="rotulo-fita-inline">Pizzas Solidárias</span>
-              <h3>Produção artesanal para manter as ações</h3>
-              <p>
-                Edições organizadas pelos voluntários em que são preparadas pizzas pré-assadas sob encomenda. Cada combo vendido ajuda a custear as contas da sede e emergências de famílias atendidas.
+          <!-- Projeto 4: Apoio Emergencial & Cheias -->
+          <article class="card-projeto">
+            <div class="projeto-foto-container">
+              <img src="/img/fotos/cestas-bairros.jpg" alt="Dezenas de cestas de alimentos embaladas e prontas para entrega com a placa da AAPC" class="projeto-foto">
+              <span class="projeto-badge-categoria">Emergência</span>
+            </div>
+            <div class="projeto-conteudo">
+              <h3>Socorro Imediato a Famílias</h3>
+              <p class="projeto-resumo">
+                Ações rápidas de acolhimento em bairros de Canoas durante temporais e alagamentos, com entrega de marmitas quentes, água mineral potável, colchões secos e kits essenciais de higiene.
               </p>
-              <div class="projeto-precisa">
-                O que precisa: adesão às encomendas comunitárias divulgadas no Instagram da ONG.
+              <div class="projeto-meta">
+                <span class="meta-label">Como apoiar:</span>
+                <span class="meta-valor">Água potável e mantimentos de pronto consumo</span>
               </div>
-              <a href="#pix" class="btn-link">Ajudar com doação &rarr;</a>
-            </div>
-            <div class="projeto-foto">
-              <figure>
-                <img src="/img/fotos/pizza-solidaria.jpg" alt="Campanha e divulgação da edição da Pizza Solidária da AAPC" loading="lazy">
-              </figure>
-            </div>
-          </article>
-
-          <!-- Projeto 5: Socorro Emergencial -->
-          <article class="projeto-linha">
-            <div class="projeto-texto">
-              <span class="rotulo-fita-inline">Socorro Emergencial</span>
-              <h3>Apoio imediato durante alagamentos</h3>
-              <p>
-                Ações rápidas de acolhimento nos bairros ribeirinhos de Canoas durante temporais e alagamentos, com entrega de marmitas quentes, água mineral potável, colchões secos e kits de limpeza.
-              </p>
-              <div class="projeto-precisa">
-                O que precisa: água mineral galão/garrafa e produtos de higiene pessoal.
-              </div>
-              <a href="#pix" class="btn-link">Ajudar com doação &rarr;</a>
-            </div>
-            <div class="projeto-foto">
-              <figure>
-                <img src="/img/fotos/enchente-2024.jpg" alt="Voluntária da AAPC uniformizada com colete salva-vidas em apoio a emergências" loading="lazy">
-              </figure>
+              <a href="#pix" class="btn-projeto-link">Apoiar com PIX emergencial →</a>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Bloco de Registro: Enchente de 2024 -->
-    <section class="secao-enchente" aria-labelledby="titulo-enchente">
-      <div class="container enchente-grid">
-        <div class="enchente-texto">
-          <span class="enchente-data">Registro histórico · Maio de 2024</span>
-          <h2 id="titulo-enchente">Apoio comunitário na maior cheia de Canoas</h2>
-          <p>
-            Durante as inundações que cobriram grandes áreas da nossa cidade em maio de 2024, a sede da AAPC na Rua Sete Povos transformou-se em polo de apoio emergencial.
-          </p>
-          <p>
-            Voluntários organizaram turnos contínuos para cozinhar e distribuir marmitas prontas, entregar água mineral, recolher donativos e providenciar colchões secos para famílias acolhidas.
-          </p>
-          <p class="enchente-bairros">
-            Bairros atendidos: Mathias Velho, Harmonia, Rio Branco, Fátima e imediações.
-          </p>
-        </div>
-        <div class="enchente-foto">
-          <figure>
-            <img src="/img/fotos/distribuicao-alimentos.jpg" alt="Voluntárias da AAPC na entrega de 60 cestas básicas na Comunidade do Prata, Bairro Fátima em Canoas" loading="lazy">
-            <figcaption class="legenda-foto">Voluntárias da AAPC na entrega de cestas de alimentos em Canoas (registro real divulgado pela coordenação).</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <!-- Bloco PIX Único (fundo --mata) -->
-    <section class="secao-pix" id="pix" aria-labelledby="titulo-pix">
-      <div class="container pix-bloco-grid">
-        <div class="pix-info-col">
-          <h2 id="titulo-pix">Doar via PIX</h2>
-          <p class="pix-sub">
-            Sua contribuição vai direto para a compra de mantimentos, fraldas e apoio urgente a famílias de Canoas.
+    <!-- =========================================================================
+         Bloco PIX Único (Alta Conversão, Fundo Mata Escuro)
+         ========================================================================= -->
+    <section class="secao-pix" id="pix">
+      <div class="container pix-container">
+        <div class="pix-intro">
+          <span class="tag-pix">Doação Direta e Segura</span>
+          <h2>Sua contribuição alimenta quem tem fome</h2>
+          <p class="pix-desc">
+            Cada valor transferido vai 100% para a compra de mantimentos, fraldas e apoio urgente a famílias cadastradas em Canoas. Sem intermediários, com prestação direta de contas.
           </p>
 
-          <div class="chave-pix-card">
-            <div>
-              <span class="chave-rotulo">Chave PIX (CNPJ da AAPC)</span>
-              <span class="chave-codigo">59.074.303/0001-00</span>
+          <div class="card-chave-pix">
+            <span class="label-chave-pix">Chave PIX Oficial (CNPJ)</span>
+            <div class="campo-chave-pix">
+              <span class="codigo-pix" id="codigo-pix-texto">59.074.303/0001-00</span>
+              <button type="button" class="btn-copiar-chave" id="btn-copiar-chave-pix" aria-label="Copiar chave PIX CNPJ">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                <span id="texto-btn-pix">Copiar chave</span>
+              </button>
             </div>
-            <button type="button" class="btn-copiar" id="btn-copiar-chave-pix">Copiar chave</button>
+            <p class="pix-status-copia" id="pix-status-copia" aria-live="polite"></p>
           </div>
 
-          <div id="pix-copia-status" aria-live="polite" class="sr-only"></div>
-
-          <p class="pix-instrucao">
-            Associação Amigos e Parceiros de Canoas · Conta institucional em Canoas/RS.<br>
-            Como fazer: abra o aplicativo do seu banco, escolha PIX, cole a chave CNPJ e confira o nome da AAPC antes de confirmar.
-          </p>
-
-          <p>
-            <a href="#falta-semana" class="pix-link-alternativo">Prefere doar alimentos ou agasalhos físicos? Veja o que está em falta na sede &rarr;</a>
-          </p>
+          <div class="dados-bancarios-pix">
+            <p><strong>Favorecido:</strong> Associação Amigos e Parceiros de Canoas</p>
+            <p><strong>Instituição:</strong> Conta Institucional de Canoas/RS</p>
+          </div>
         </div>
 
-        <div class="pix-qrcode-col">
-          <img src="/img/pix-qrcode.svg" alt="QR Code PIX para leitura no celular" class="pix-qr-img" width="180" height="180">
-          <span class="qr-legenda">Aponte a câmera do aplicativo do banco para o QR Code acima</span>
+        <div class="pix-qr-visual">
+          <div class="card-qr-box">
+            <p class="qr-titulo">Aponte a câmera do seu banco</p>
+            <div class="qr-svg-wrapper">
+              <img src="/img/pix-qrcode.svg" alt="QR Code PIX oficial para CNPJ 59.074.303/0001-00 da AAPC Canoas" class="qr-img">
+            </div>
+            <p class="qr-instrucao">Abra o app do seu banco, escolha <strong>Pagar com QR Code</strong> e aponte o celular.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Voluntariado -->
-    <section class="secao-voluntariado" id="voluntariado" aria-labelledby="titulo-voluntariado">
+    <!-- =========================================================================
+         Seja Voluntário (Envolva-se)
+         ========================================================================= -->
+    <section class="secao-voluntariado" id="voluntariado">
       <div class="container voluntariado-grid">
         <div class="voluntariado-texto">
-          <h2 id="titulo-voluntariado">Como ser voluntário na AAPC</h2>
+          <span class="subtitulo-secao">Participe</span>
+          <h2 class="titulo-secao">Como fazer parte da nossa equipe voluntária</h2>
           <p>
-            Toda a nossa equipe é formada por moradores de Canoas que doam algumas horas da semana. Precisamos de apoio prático para triagem de roupas, montagem de cestas e atividades na sede.
+            Nossa equipe é formada por moradores de Canoas que doam algumas horas da sua semana para fazer a diferença. Precisamos de apoio prático na sede e nas ações externas:
           </p>
 
-          <h3 class="passos-titulo">O que acontece depois de enviar seu contato:</h3>
-          <ol class="passos-depois">
-            <li>1. A coordenação chama você no WhatsApp para conversar.</li>
-            <li>2. Você visita a sede na Rua Sete Povos, 312, para conhecer os voluntários.</li>
-            <li>3. Você escolhe as atividades e os turnos em que pode ajudar.</li>
-          </ol>
+          <div class="passos-voluntario">
+            <div class="passo-item">
+              <span class="passo-numero">1</span>
+              <div>
+                <strong>Envie seu contato</strong>
+                <p>Preencha a ficha ao lado e fale diretamente com a coordenação.</p>
+              </div>
+            </div>
+            <div class="passo-item">
+              <span class="passo-numero">2</span>
+              <div>
+                <strong>Conheça a Sede</strong>
+                <p>Agende uma visita na Rua Sete Povos, 312 para conhecer a rotina.</p>
+              </div>
+            </div>
+            <div class="passo-item">
+              <span class="passo-numero">3</span>
+              <div>
+                <strong>Escolha sua atividade</strong>
+                <p>Triagem de roupas, montagem de cestas, acolhimento ou apoio nos eventos.</p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="form-voluntario-wrap">
-          <h3>Ficha de contato para voluntários</h3>
-          <form id="form-voluntario" novalidate>
-            <div class="grupo-campo">
-              <label for="vol-nome">Seu nome completo *</label>
-              <input type="text" id="vol-nome" name="nome" placeholder="Ex.: Maria da Silva" required aria-describedby="erro-vol-nome">
-              <span class="erro-campo" id="erro-vol-nome" role="alert"></span>
-            </div>
+        <div class="voluntariado-form-wrapper">
+          <div class="card-formulario">
+            <h3>Ficha de contato para novos voluntários</h3>
+            <p class="form-sub">Suas informações abrem uma conversa direta no WhatsApp da coordenação.</p>
+            
+            <form id="form-voluntario" novalidate>
+              <div class="form-grupo">
+                <label for="campo-nome">Seu nome completo *</label>
+                <input type="text" id="campo-nome" name="nome" placeholder="Ex: Maria da Silva" required>
+                <span class="msg-erro" id="erro-nome" aria-live="polite"></span>
+              </div>
 
-            <div class="grupo-campo">
-              <label for="vol-whats">WhatsApp com DDD *</label>
-              <input type="tel" id="vol-whats" name="whatsapp" placeholder="(51) 99999-0000" required aria-describedby="erro-vol-whats">
-              <span class="erro-campo" id="erro-vol-whats" role="alert"></span>
-            </div>
+              <div class="form-grupo">
+                <label for="campo-whatsapp">WhatsApp com DDD *</label>
+                <input type="tel" id="campo-whatsapp" name="whatsapp" placeholder="(51) 99999-9999" required>
+                <span class="msg-erro" id="erro-whatsapp" aria-live="polite"></span>
+              </div>
 
-            <div class="grupo-campo">
-              <label for="vol-area">Onde gostaria de ajudar? *</label>
-              <select id="vol-area" name="area" required aria-describedby="erro-vol-area">
-                <option value="">Selecione uma área...</option>
-                <option value="Triagem de roupas e sapatos (Pegue e Leve)">Triagem de roupas e sapatos (Pegue e Leve)</option>
-                <option value="Separação e montagem de cestas de alimentos">Separação e montagem de cestas de alimentos</option>
-                <option value="Visitas hospitalares (Bichinhos Caridosos)">Visitas hospitalares (Bichinhos Caridosos)</option>
-                <option value="Cozinha e eventos comunitários (pizzas)">Cozinha e eventos comunitários (pizzas)</option>
-                <option value="Apoio geral na sede da Sete Povos">Apoio geral na sede da Sete Povos</option>
-              </select>
-              <span class="erro-campo" id="erro-vol-area" role="alert"></span>
-            </div>
+              <div class="form-grupo">
+                <label for="campo-area">Onde você prefere ajudar? *</label>
+                <select id="campo-area" name="area" required>
+                  <option value="">Selecione uma área...</option>
+                  <option value="Triagem de alimentos e cestas">Triagem de alimentos e montagem de cestas</option>
+                  <option value="Araras do Pegue e Leve">Araras do Pegue e Leve e doações de roupas</option>
+                  <option value="Brechó solidário na sede">Atendimento no Brechó Solidário</option>
+                  <option value="Visitas hospitalares">Projeto Bichinhos Caridosos</option>
+                  <option value="Logística e transporte">Apoio com transporte / logística</option>
+                  <option value="Onde precisar">Onde houver mais necessidade</option>
+                </select>
+                <span class="msg-erro" id="erro-area" aria-live="polite"></span>
+              </div>
 
-            <div class="grupo-campo">
-              <label for="vol-disp">Sua disponibilidade</label>
-              <select id="vol-disp" name="disponibilidade">
-                <option value="Finais de semana">Finais de semana</option>
-                <option value="Dias de semana (manhã ou tarde)">Dias de semana (manhã ou tarde)</option>
-                <option value="Noite">Noite</option>
-                <option value="Apenas em mutirões ou campanhas específicas">Apenas em mutirões ou campanhas específicas</option>
-              </select>
-            </div>
+              <div class="form-grupo">
+                <label for="campo-disponibilidade">Sua disponibilidade</label>
+                <select id="campo-disponibilidade" name="disponibilidade">
+                  <option value="Finais de semana">Finais de semana</option>
+                  <option value="Dias de semana (manhã)">Dias de semana (manhã)</option>
+                  <option value="Dias de semana (tarde)">Dias de semana (tarde)</option>
+                  <option value="Horários flexíveis">Horários flexíveis</option>
+                </select>
+              </div>
 
-            <button type="submit" class="btn-enviar-vol" id="btn-enviar-voluntario">Enviar pelo WhatsApp</button>
-          </form>
+              <button type="submit" class="btn btn-enviar-voluntario">
+                Enviar contato pelo WhatsApp
+              </button>
+            </form>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Onde estamos (Layout em linha) -->
-    <section class="secao-local" id="onde-estamos" aria-labelledby="titulo-local">
+    <!-- =========================================================================
+         Onde Estamos & Horários de Funcionamento
+         ========================================================================= -->
+    <section class="secao-local" id="onde-estamos">
       <div class="container">
-        <div class="local-grid">
-          <div class="local-bloco">
-            <h3 id="titulo-local">Sede da AAPC</h3>
-            <p class="mono-info">
-              Rua Sete Povos, 312<br>
-              Bairro Marechal Rondon<br>
-              Canoas - RS, CEP 92020-430
-            </p>
-            <p style="margin-top: 8px;">
-              <a href="https://maps.google.com/?q=Rua+Sete+Povos+312+Canoas+RS" target="_blank" rel="noopener noreferrer">Abrir no Google Maps &rarr;</a>
-            </p>
+        <div class="cabecalho-secao-centro">
+          <span class="subtitulo-secao">Localização & Contato</span>
+          <h2 class="titulo-secao">Venha nos conhecer na Rua Sete Povos</h2>
+          <p class="descricao-secao-centro">
+            Nossa sede é aberta para recebimento de doações, triagem e acolhimento direto.
+          </p>
+        </div>
+
+        <div class="grid-local-info">
+          <div class="card-info-local">
+            <span class="icone-local">📍</span>
+            <h3>Sede da AAPC</h3>
+            <p>Rua Sete Povos, 312<br>Bairro Marechal Rondon<br>Canoas - RS, CEP 92020-430</p>
+            <a href="https://maps.google.com/?q=Rua+Sete+Povos+312+Canoas+RS" target="_blank" rel="noopener noreferrer" class="link-mapa">
+              Abrir no Google Maps →
+            </a>
           </div>
 
-          <div class="local-bloco">
-            <h3>Horários de atendimento</h3>
-            <!-- TODO: confirmar horários exatos da sede com a AAPC -->
-            <p class="mono-info">
-              Segunda a sábado, das 9h às 17h<br>
-              Brechó Solidário: terças e quintas, das 14h às 18h
-            </p>
+          <div class="card-info-local">
+            <span class="icone-local">⏰</span>
+            <h3>Horários de Atendimento</h3>
+            <p><strong>Recebimento de doações:</strong><br>Segunda a sábado, das 9h às 17h</p>
+            <p class="horario-extra"><strong>Brechó Solidário:</strong><br>Terças e quintas, das 14h às 18h</p>
           </div>
 
-          <div class="local-bloco">
-            <h3>Acompanhe e participe</h3>
-            <p class="mono-info">
-              WhatsApp: (51) 98465-4846<br>
-              Instagram: <a href="https://www.instagram.com/ong_aapc_/" target="_blank" rel="noopener noreferrer">@ong_aapc_</a>
-            </p>
+          <div class="card-info-local">
+            <span class="icone-local">💬</span>
+            <h3>Canais Oficiais</h3>
+            <p><strong>WhatsApp Geral:</strong><br><a href="https://wa.me/5551984654846" target="_blank" rel="noopener noreferrer" class="link-contato">(51) 98465-4846</a></p>
+            <p class="contato-extra"><strong>Instagram Oficial:</strong><br><a href="https://www.instagram.com/ong_aapc_/" target="_blank" rel="noopener noreferrer" class="link-contato">@ong_aapc_</a></p>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Rodapé Institucional (fundo --mata) -->
-  <footer class="site-rodape" role="contentinfo">
-    <div class="container">
-      <div class="rodape-topo">
-        <div>
-          <span class="rodape-marca">AAPC CANOAS</span>
-          <span class="rodape-lema"> · Amor e solidariedade</span>
+  <!-- =========================================================================
+       Rodapé Institucional
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-marca">
+        <div class="logo-footer">
+          <img src="/img/logo-aapc.png" alt="AAPC Canoas" width="40" height="40">
+          <div>
+            <strong>AAPC CANOAS</strong>
+            <span>Amor & Solidariedade</span>
+          </div>
         </div>
-        <nav class="rodape-nav" aria-label="Navegação do rodapé">
-          <a href="#topo">Início</a>
-          <a href="#projetos">Projetos</a>
-          <a href="#voluntariado">Voluntariado</a>
-          <a href="#pix">Doação PIX</a>
-          <a href="#onde-estamos">Onde estamos</a>
-        </nav>
+        <p class="footer-desc">
+          Associação Amigos e Parceiros de Canoas (AAPC). Organização sem fins lucrativos comprometida com a dignidade, alimentação e acolhimento em Canoas/RS.
+        </p>
+        <p class="footer-cnpj">CNPJ: 59.074.303/0001-00</p>
       </div>
-      <div class="rodape-dados">
-        Associação Amigos e Parceiros de Canoas (AAPC) · CNPJ: 59.074.303/0001-00<br>
-        Sede: Rua Sete Povos, 312, Bairro Marechal Rondon, Canoas - RS
+
+      <div class="footer-coluna">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="#topo">Início</a></li>
+          <li><a href="#historia">Nossa Atuação</a></li>
+          <li><a href="#o-que-doar">O Que Doar</a></li>
+          <li><a href="#projetos">Projetos em Ação</a></li>
+          <li><a href="#pix">Doação via PIX</a></li>
+          <li><a href="#voluntariado">Seja Voluntário</a></li>
+          <li><a href="#onde-estamos">Onde Estamos</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-coluna">
+        <h4>Atendimento</h4>
+        <p>Rua Sete Povos, 312<br>Marechal Rondon, Canoas - RS</p>
+        <p>Segunda a sábado, das 9h às 17h</p>
+        <p>WhatsApp: (51) 98465-4846</p>
+        <p>Instagram: <a href="https://www.instagram.com/ong_aapc_/" target="_blank" rel="noopener noreferrer">@ong_aapc_</a></p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-container">
+        <p>© 2026 AAPC Canoas · Todos os direitos reservados.</p>
+        <a href="#topo" class="voltar-topo" aria-label="Voltar ao início">Voltar ao topo ↑</a>
       </div>
     </div>
   </footer>
