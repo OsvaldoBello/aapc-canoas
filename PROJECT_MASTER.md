@@ -64,16 +64,38 @@ O portal da **Associação Amigos e Parceiros de Canoas (AAPC)** une a autentici
 
 | Arquivo | Função |
 | :--- | :--- |
-| `index.html` | Estrutura semântica limpa, cards dinâmicos, fotos integradas e SEO |
+| `index.html` | Estrutura semântica limpa, cards dinâmicos, fotos integradas e SEO (Schema JSON-LD) |
 | `src/style.css` | Design System com Poppins/DM Sans, cores oficiais e responsividade total |
 | `src/main.js` | Interações PIX, validação de formulário com WhatsApp, menu mobile e scroll |
+| `public/robots.txt` | Instruções de rastreamento para robôs de busca (Googlebot) e sitemap |
+| `public/sitemap.xml` | Mapa de páginas indexáveis do portal para indexadores de pesquisa |
+| `vercel.json` | Configurações de cabeçalhos de segurança, clean URLs e cache na Vercel |
 | `public/img/fotos/` | Acervo de imagens autênticas otimizadas em alta definição |
 | `public/img/pix-qrcode.svg` | QR Code SVG oficial padrão Banco Central do Brasil |
 | `scripts/verify_redesign.py` | Script de validação visual e verificação de overflow mobile |
 
 ---
 
-## 4. Evidências de Teste e Validação
+## 4. Fase 3: Deploy Vercel & Configuração de DNS / Google Search
+
+- **Repositório GitHub Oficial**: `https://github.com/OsvaldoBello/aapc-canoas` (Branch `main` ativa e sincronizada)
+- **Hospedagem Recomendada**: Vercel (Conexão nativa com o GitHub)
+- **Presets de Build**:
+  - Framework Preset: `Vite`
+  - Build Command: `npm run build`
+  - Output Directory: `dist`
+  - Install Command: `npm install`
+- **Configuração de Domínio & DNS**:
+  - Registro Tipo `A`: Host `@` -> `76.76.21.21`
+  - Registro Tipo `CNAME`: Host `www` -> `cname.vercel-dns.com`
+  - Verificação Google Search Console: Registro Tipo `TXT` fornecido pelo Google inserido no painel DNS.
+- **Indexação Google**:
+  - Schema.org `NGO` com CNPJ, endereço e redes sociais integrado ao `<head>`.
+  - Perfis no Google Meu Negócio e Maps vinculados à sede da Rua Sete Povos, 312.
+
+---
+
+## 5. Evidências de Teste e Validação
 
 - **Viewport Mobile (375px)**:
   - `scrollWidth`: 375px
@@ -81,6 +103,8 @@ O portal da **Associação Amigos e Parceiros de Canoas (AAPC)** une a autentici
   - **Status**: Zero scroll horizontal detectado.
 - **Teste de Interação PIX**:
   - Clique no botão `#btn-copiar-chave-pix` copia `59.074.303/0001-00` e exibe mensagem de sucesso.
+- **Build de Produção**:
+  - `npm run build` gerando bundle limpo em `dist/` em < 1s.
 - **Capturas Geradas**:
   - `artifacts/redesign_verification/desktop_full.png`
   - `artifacts/redesign_verification/mobile_full.png`
