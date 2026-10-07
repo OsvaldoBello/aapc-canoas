@@ -194,6 +194,15 @@ button, input, select, textarea {
   white-space: nowrap;
 }
 
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--verde-aapc);
+  outline-offset: 3px;
+}
+
 .btn-header-pix {
   background-color: var(--verde-aapc);
   color: #FFFFFF;
@@ -864,6 +873,10 @@ button, input, select, textarea {
   background-color: var(--verde-hover);
 }
 
+.btn-copiar-chave:active {
+  transform: scale(0.97);
+}
+
 .btn-copiar-chave.copiado {
   background-color: #27AE60;
 }
@@ -1073,6 +1086,10 @@ button, input, select, textarea {
 .btn-enviar-voluntario:hover {
   background-color: var(--verde-hover);
   color: #FFFFFF;
+}
+
+.btn-enviar-voluntario:active {
+  transform: scale(0.98);
 }
 
 /* --------------------------------------------------------------------------
