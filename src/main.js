@@ -1,5 +1,5 @@
 // AAPC Canoas · Lógica de Interações e Validações
-const WHATSAPP_AAPC = '5551984654846';
+const WHATSAPP_AAPC = '5551992701114';
 const CHAVE_PIX = '59.074.303/0001-00';
 
 document.addEventListener('DOMContentLoaded', () => {

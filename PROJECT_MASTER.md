@@ -51,8 +51,8 @@ O portal da **Associação Amigos e Parceiros de Canoas (AAPC)** une a autentici
 - **Endereço Sede**: Rua Sete Povos, 312 - Bairro Marechal Rondon / Canoas - RS, CEP 92020-430
 - **Lema Institucional**: *"Amor & Solidariedade"*
 - **Slogan**: *"Um gesto de amor pode mudar uma vida!"*
-- **WhatsApp Geral & Doações**: `(51) 98465-4846`
-- **WhatsApp Brechó Solidário**: `(51) 98133-4287`
+- **WhatsApp Geral & Doações**: `(51) 99270-1114` (Renata)
+- **WhatsApp Brechó Solidário**: `(51) 98133-4287` (Rosa)
 - **Instagram**: [@ong_aapc_](https://www.instagram.com/ong_aapc_/)
 - **Horários**:
   - Sede (Recebimento de doações): Segunda a sábado, das 9h às 17h
