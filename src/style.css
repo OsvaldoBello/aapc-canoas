@@ -2130,4 +2130,54 @@ button, input, select, textarea {
     grid-template-columns: 1fr;
     gap: 32px;
   }
+
+  /* Ajustes finos para telas compactas e mobile (<= 768px) */
+  .container {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .card-formulario {
+    padding: 24px 18px;
+  }
+
+  .voluntariado-grid,
+  .associados-container {
+    grid-template-columns: 100%;
+    min-width: 0;
+  }
+
+  .voluntariado-texto,
+  .voluntariado-form-wrapper,
+  .associados-intro,
+  .associados-form-wrapper {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .card-formulario,
+  .form-grupo,
+  .caixa-termo-adesao,
+  .caixa-termos-associado,
+  input,
+  select,
+  textarea {
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .termo-cabecalho-toggle {
+    padding: 12px 14px;
+  }
+
+  .grid-checkboxes-areas {
+    grid-template-columns: 1fr;
+  }
+
+  .seletor-valores-mensais .btn-pilula-valor {
+    flex: 1 1 calc(50% - 10px);
+    min-width: 60px;
+  }
 }
+

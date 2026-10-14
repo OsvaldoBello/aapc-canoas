@@ -1,46 +1,65 @@
 # DOCUMENTO MESTRE DO PROJETO (MASTER SPEC)
 ## Portal Voluntário & Captação Solidária: ONG AAPC Canoas
-> **Documento Vivo do Projeto**: Versão 3.1 (Design Dinâmico, Organizado & Inspirado na Transformar RS)  
-> **Status Atual**: Concluído, Validado Visualmente e Testado Responsivamente  
+> **Documento Vivo do Projeto**: Versão 4.0 (Reformulação Completa: Hub Como Ajudar, Associados, Voluntariado & Disparo por E-mail)  
+> **Status Atual**: Concluído, Validado Visualmente, Responsivo e Testado via Playwright  
 > **Repositório**: `c:\Users\Osvaldo\OneDrive\Desktop\AAPC`  
-> **Servidor de Teste Local**: `http://localhost:3000` (Ativo)  
-> **Target de Hospedagem**: Vercel
+> **Target de Hospedagem**: Vercel  
+> **E-mail de Teste Configurado**: `osvaldooliveirabello@gmail.com`  
+> **E-mail Oficial de Produção**: `ongamigoseparceiroscanoas@gmail.com`
 
 ---
 
-## 1. Visão Geral & Diretrizes do Novo Design
+## 1. Visão Geral & Diretrizes do Portal
 
-O portal da **Associação Amigos e Parceiros de Canoas (AAPC)** une a autenticidade real das ações da ONG com a energia visual dinâmica e organizada do benchmark **Transformar RS** (`transformarrs.com.br`).
+O portal da **Associação Amigos e Parceiros de Canoas (AAPC)** une a autenticidade real das ações da ONG com uma arquitetura moderna, responsiva e estruturada para engajar voluntários, associados contribuintes e doadores.
 
-### Principais Aprimoramentos Realizados
-1. **Dinamismo Visual & Organização Moderna (Benchmark Transformar RS)**:
-   - Header fixo com logotipo nítido, navegação limpa e botão de destaque para o PIX.
-   - Hero dinâmico em 2 colunas: chamada emotiva forte, botões de ação e vitrine fotográfica da equipe voluntária na sede com badge flutuante.
-   - Tipografia de alta legibilidade: `Poppins` (pesos 600, 700, 800) nos títulos e `DM Sans` (400, 500, 700) no corpo de texto.
-   - Paleta equilibrada com Verde AAPC oficial (`#009639`), Azul solidário (`#0072CE`), fundo esbranquiçado suave (`#F6FAF7`), cards brancos com elevação e microinterações de hover.
-2. **Substituição do Cartão Kraft por Doações Permanentes**:
-   - Eliminado o cartão de pedidos temporários ("Falta esta semana") com fita e datas, evitando a necessidade de painel administrativo para atualizações constantes.
-   - Implementada a seção organizada **"Itens essenciais que sempre fazem a diferença"** com 4 cards modernos:
-     - 🥫 *Alimentos Não Perecíveis* (arroz, feijão, leite, óleo, massa, farinha, café).
-     - 🧥 *Roupas, Calçados & Cobertores* (agasalhos, mantas térmicas, sapatos para o Pegue e Leve e Brechó).
-     - 👶 *Fraldas & Itens Infantis* (fraldas infantis e geriátricas, brinquedos para o HCC).
-     - 🧼 *Higiene Pessoal & Limpeza* (sabonetes, creme dental, sabão em barra, desinfetante).
-3. **Fotos 100% Reais com Enquadramento e Resolução Otimizados**:
-   - Removido o cartaz de baixa resolução da pizza de 2021.
-   - Removidas todas as descrições/legendas (`figcaption`) abaixo das fotos. As fotografias agora integram a estética dos cards e do layout de maneira natural e elegante.
-   - Recortes inteligentes executados para preservar rostos, banners oficiais e equipes completas:
-     - `hero-equipe.jpg`: 4 voluntários com a camiseta da AAPC e fardos de água mineral na sede.
-     - `entrega-prata-fatima.jpg`: Entrega real de 60 cestas básicas na Comunidade do Prata (Bairro Fátima).
-     - `pegue-e-leve.jpg`: Voluntárias e banner na ação de roupas e calçados.
-     - `bichinhos-caridosos.jpg`: Voluntárias sorrindo com camisetas da AAPC e crachá infantil no Hospital Criança Conceição.
-     - `cestas-alimentos.jpg`: Porta-malas carregado de alimentos e mantimentos em alta definição.
-     - `cestas-bairros.jpg`: Dezenas de cestas de alimentos prontas para distribuição comunitária.
-4. **Captação PIX Direta**:
-   - Bloco em verde floresta com chave oficial CNPJ `59.074.303/0001-00`, botão com cópia assistida e feedback acessível via `aria-live`.
-   - QR Code SVG autêntico (BR Code padrão Banco Central).
-5. **Seja Voluntário & Onde Estamos**:
-   - Passos objetivos de acolhimento e formulário semântico com validação em tempo real que abre o WhatsApp oficial com dados preenchidos.
-   - 3 cards com informações completas da sede, horários de funcionamento, brechó e contatos.
+### Principais Módulos do Sistema
+
+1. **Hub "Como eu posso ajudar?" (`#como-ajudar`)**:
+   - Grid de 3 colunas (layout inspirado nas melhores práticas de captação de ONGs):
+     - **Doações**: Direcionamento para doações materiais permanentes e chave PIX.
+     - **Voluntariado**: Convite à atuação presencial ou "sem sair de casa".
+     - **Seja Associado**: Adesão a contribuições financeiras mensais recorrentes.
+   - Botões de chamada na cor ouro institucional (`#F3BA2F` / `#DFA51D`).
+
+2. **Seção & Ficha Cadastral: "Seja Nosso Associado" (`#associados`)**:
+   - Chamada emotiva e realista: destaque de que a ONG é independente, não recebe recursos públicos municipais e depende da união da sociedade.
+   - Seletor de contribuição mensal com pílulas interativas (`R$ 20,00`, `R$ 50,00`, `R$ 100,00` e `Outro valor`).
+   - Formulário semântico com validação em tempo real e máscaras dinâmicas (CPF, Telefone/WhatsApp com DDD e CEP).
+   - Termos de aceite formal:
+     - Aceite do Estatuto Social da AAPC.
+     - Autorização de tratamento de dados e comunicações institucionais (em conformidade com a LGPD).
+
+3. **Seção "Seja Voluntário" (`#voluntariado`)**:
+   - **Tipos de Ajuda & Sem Sair de Casa**:
+     - Atuação remota: tricô solidário, consertos em agasalhos, marketing digital e pontos de arrecadação em condomínios/empresas.
+     - Atuação presencial: montagem de cestas básicas, triagem de doações e ações de rua.
+   - **Credibilidade & Certificação Oficial**:
+     - Foto real da ação solidária com acadêmicos da **Universidade La Salle** (`public/img/fotos/acao-voluntarios-lasalle.jpg`).
+     - Emissão formal de certificados de horas complementares e extensão universitária.
+   - **Ficha Oficial de Adesão ao Serviço Voluntário**:
+     - 11 campos oficiais espelhados no formulário consolidado da ONG (experiência prévia, 11 áreas de atuação, motivação e autorização de imagem).
+   - **Termo de Adesão ao Serviço Voluntário Oficial**:
+     - Acordeão expansível com os 8 artigos completos baseados na **Lei Federal nº 9.608/1998** e LGPD (**Lei nº 13.709/2018**).
+     - Checkbox com aceite obrigatório das condições do termo.
+
+4. **Motor de Disparo Assíncrono por E-mail (FormSubmit AJAX)**:
+   - Os formulários de Voluntariado e Associados não dependem exclusivamente de envio manual via WhatsApp.
+   - Envio assíncrono via `fetch()` para o endpoint AJAX do FormSubmit (`https://formsubmit.co/ajax/osvaldooliveirabello@gmail.com`).
+   - Bloqueio temporário do botão durante o envio com feedback em tempo real.
+   - Tratamento de sucesso com mensagem limpa, reset automático dos campos e botão alternativo de confirmação por WhatsApp caso desejado pelo usuário.
+   - Configuração centralizada em `src/main.js`:
+     ```javascript
+     const EMAIL_DESTINO_TESTE = 'osvaldooliveirabello@gmail.com';
+     // Produção futura: 'ongamigoseparceiroscanoas@gmail.com'
+     ```
+
+5. **Doações de Itens Essenciais Permanentes (`#o-que-doar`)**:
+   - 4 categorias organizadas: Alimentos Não Perecíveis, Roupas e Cobertores, Fraldas e Itens Infantis, Higiene e Limpeza.
+
+6. **Captação PIX Direta (`#como-doar-pix`)**:
+   - Chave oficial CNPJ `59.074.303/0001-00` com botão de cópia assistida e feedback acessível.
+   - QR Code SVG autêntico padrão Banco Central do Brasil.
 
 ---
 
@@ -64,47 +83,36 @@ O portal da **Associação Amigos e Parceiros de Canoas (AAPC)** une a autentici
 
 | Arquivo | Função |
 | :--- | :--- |
-| `index.html` | Estrutura semântica limpa, cards dinâmicos, fotos integradas e SEO (Schema JSON-LD) |
-| `src/style.css` | Design System com Poppins/DM Sans, cores oficiais e responsividade total |
-| `src/main.js` | Interações PIX, validação de formulário com WhatsApp, menu mobile e scroll |
-| `public/robots.txt` | Instruções de rastreamento para robôs de busca (Googlebot) e sitemap |
-| `public/sitemap.xml` | Mapa de páginas indexáveis do portal para indexadores de pesquisa |
-| `vercel.json` | Configurações de cabeçalhos de segurança, clean URLs e cache na Vercel |
-| `public/img/fotos/` | Acervo de imagens autênticas otimizadas em alta definição |
+| `index.html` | Estrutura semântica completa: Hero, Hub Como Ajudar, História, Doações, Projetos, Associados, Voluntariado com Termo oficial, PIX e Sede |
+| `src/style.css` | Design System com tokens, Poppins/DM Sans, cores oficiais, componentes de formulário, pílulas de valor e responsividade mobile estrita |
+| `src/main.js` | Disparo AJAX via FormSubmit, máscaras de CPF/Telefone/CEP, seletores de valor, acordeão do termo, cópia do PIX e menu mobile |
+| `public/robots.txt` | Instruções de indexação para robôs de busca (Googlebot) |
+| `public/sitemap.xml` | Mapa de URLs indexáveis do portal |
+| `vercel.json` | Cabeçalhos de segurança, Clean URLs e cache na Vercel |
+| `public/img/fotos/` | Acervo fotográfico autêntico, incluindo `acao-voluntarios-lasalle.jpg` |
 | `public/img/pix-qrcode.svg` | QR Code SVG oficial padrão Banco Central do Brasil |
-| `scripts/verify_redesign.py` | Script de validação visual e verificação de overflow mobile |
+| `scripts/verify_forms.py` | Script de teste automatizado Playwright (Desktop 1366px e Mobile 375px) |
+| `scripts/verify_redesign.py` | Script complementar de captura das seções do redesign |
 
 ---
 
-## 4. Fase 3: Deploy Vercel & Configuração de DNS / Google Search
+## 4. Evidências de Teste e Validação
 
-- **Repositório GitHub Oficial**: `https://github.com/OsvaldoBello/aapc-canoas` (Branch `main` ativa e sincronizada)
-- **Hospedagem Recomendada**: Vercel (Conexão nativa com o GitHub)
-- **Presets de Build**:
-  - Framework Preset: `Vite`
-  - Build Command: `npm run build`
-  - Output Directory: `dist`
-  - Install Command: `npm install`
-- **Configuração de Domínio & DNS**:
-  - Registro Tipo `A`: Host `@` -> `76.76.21.21`
-  - Registro Tipo `CNAME`: Host `www` -> `cname.vercel-dns.com`
-  - Verificação Google Search Console: Registro Tipo `TXT` fornecido pelo Google inserido no painel DNS.
-- **Indexação Google**:
-  - Schema.org `NGO` com CNPJ, endereço e redes sociais integrado ao `<head>`.
-  - Perfis no Google Meu Negócio e Maps vinculados à sede da Rua Sete Povos, 312.
-
----
-
-## 5. Evidências de Teste e Validação
-
-- **Viewport Mobile (375px)**:
+- **Viewport Mobile (375px x 812px)**:
   - `scrollWidth`: 375px
   - `clientWidth`: 375px
-  - **Status**: Zero scroll horizontal detectado.
-- **Teste de Interação PIX**:
-  - Clique no botão `#btn-copiar-chave-pix` copia `59.074.303/0001-00` e exibe mensagem de sucesso.
+  - **Status**: Zero scroll horizontal detectado após refinamento dos grids e formulários.
+- **Viewport Desktop (1366px x 900px)**:
+  - Presença e visibilidade confirmadas de `#como-ajudar` (3 cards com botão ouro), `#associados` e `#voluntariado`.
+  - Acordeão do Termo de Adesão ao Serviço Voluntário validado com exibição integral dos 8 artigos da Lei nº 9.608/1998.
+  - Seletor de valor de associados validado (seleção de valores fixos e exibição dinâmica do campo de outro valor).
+  - Foto institucional com estudantes da Universidade La Salle validada.
 - **Build de Produção**:
-  - `npm run build` gerando bundle limpo em `dist/` em < 1s.
+  - `npm run build` gerando bundle limpo em `dist/` em < 1.5s (Vite 6.4.4).
 - **Capturas Geradas**:
-  - `artifacts/redesign_verification/desktop_full.png`
-  - `artifacts/redesign_verification/mobile_full.png`
+  - `artifacts/verification_forms/desktop_hub_como_ajudar.png`
+  - `artifacts/verification_forms/desktop_associados.png`
+  - `artifacts/verification_forms/desktop_voluntariado.png`
+  - `artifacts/verification_forms/mobile_como_ajudar.png`
+  - `artifacts/verification_forms/mobile_associados.png`
+  - `artifacts/verification_forms/mobile_voluntariado.png`
