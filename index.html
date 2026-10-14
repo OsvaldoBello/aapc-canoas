@@ -487,6 +487,190 @@
     </section>
 
     <!-- =========================================================================
+         Seja Nosso Associado (Contribuição Mensal & Sustentabilidade)
+         ========================================================================= -->
+    <section class="secao-associados" id="associados">
+      <div class="container associados-container">
+        <div class="associados-intro">
+          <span class="subtitulo-secao">Sustentabilidade & Impacto</span>
+          <h2 class="titulo-secao">Seja nosso associado e ajude a transformar vidas</h2>
+          <div class="destaque-independencia">
+            <span class="icone-alerta-verde">💛</span>
+            <p>
+              <strong>A AAPC não recebe recursos municipais ou governamentais.</strong> Sobrevivemos exclusivamente da solidariedade e do apoio de voluntários e associados.
+            </p>
+          </div>
+          <p class="associados-desc">
+            Você também pode ser um voluntário apoiando financeiramente a continuidade do nosso trabalho comunitário. Como associado contribuinte, sua doação mensal regular assegura o fornecimento contínuo de cestas básicas, alimentos de pronto consumo e assistência humanizada a quem mais precisa em Canoas.
+          </p>
+
+          <div class="beneficios-associado">
+            <div class="beneficio-item">
+              <span class="beneficio-check">✔</span>
+              <div>
+                <strong>Apoio 100% transparente</strong>
+                <p>Prestação direta de contas e destinação exclusiva às famílias assistidas.</p>
+              </div>
+            </div>
+            <div class="beneficio-item">
+              <span class="beneficio-check">✔</span>
+              <div>
+                <strong>Alimentação garantida o ano todo</strong>
+                <p>Cestas básicas e marmitas distribuídas sem interrupção para bairros vulneráveis.</p>
+              </div>
+            </div>
+            <div class="beneficio-item">
+              <span class="beneficio-check">✔</span>
+              <div>
+                <strong>Autonomia e liberdade</strong>
+                <p>Você escolhe o valor da sua contribuição mensal e pode alterar a qualquer momento.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="associados-form-wrapper">
+          <div class="card-formulario card-formulario-associados">
+            <div class="form-header-box">
+              <span class="tag-form">Formulário de Adesão</span>
+              <h3>Associação Amigos e Parceiros de Canoas</h3>
+              <p class="form-sub">
+                Preencha os dados abaixo para formalizar seu apoio mensal à AAPC.
+              </p>
+            </div>
+
+            <form id="form-associado" novalidate>
+              <div class="form-grid-duplo">
+                <div class="form-grupo">
+                  <label for="campo-assoc-nome">Nome completo *</label>
+                  <input type="text" id="campo-assoc-nome" name="nome" placeholder="Ex: João dos Santos" required>
+                  <span class="msg-erro" id="erro-assoc-nome" aria-live="polite"></span>
+                </div>
+
+                <div class="form-grupo">
+                  <label for="campo-assoc-nascimento">Data de nascimento *</label>
+                  <input type="date" id="campo-assoc-nascimento" name="data_nascimento" required>
+                  <span class="msg-erro" id="erro-assoc-nascimento" aria-live="polite"></span>
+                </div>
+              </div>
+
+              <div class="form-grid-duplo">
+                <div class="form-grupo">
+                  <label for="campo-assoc-cpf">CPF *</label>
+                  <input type="text" id="campo-assoc-cpf" name="cpf" placeholder="000.000.000-00" required maxlength="14">
+                  <span class="msg-erro" id="erro-assoc-cpf" aria-live="polite"></span>
+                </div>
+
+                <div class="form-grupo">
+                  <label for="campo-assoc-telefone">Telefone / WhatsApp com DDD *</label>
+                  <input type="tel" id="campo-assoc-telefone" name="telefone" placeholder="(51) 99999-9999" required maxlength="15">
+                  <span class="msg-erro" id="erro-assoc-telefone" aria-live="polite"></span>
+                </div>
+              </div>
+
+              <div class="form-grid-duplo">
+                <div class="form-grupo">
+                  <label for="campo-assoc-email">E-mail *</label>
+                  <input type="email" id="campo-assoc-email" name="email" placeholder="seuemail@exemplo.com" required>
+                  <span class="msg-erro" id="erro-assoc-email" aria-live="polite"></span>
+                </div>
+
+                <div class="form-grupo">
+                  <label for="campo-assoc-profissao">Profissão *</label>
+                  <input type="text" id="campo-assoc-profissao" name="profissao" placeholder="Ex: Professor(a), Engenheiro(a)..." required>
+                  <span class="msg-erro" id="erro-assoc-profissao" aria-live="polite"></span>
+                </div>
+              </div>
+
+              <div class="form-grupo">
+                <label for="campo-assoc-endereco">Endereço completo (Rua, número e complemento) *</label>
+                <input type="text" id="campo-assoc-endereco" name="endereco" placeholder="Ex: Rua Tiradentes, 450, Apto 102" required>
+                <span class="msg-erro" id="erro-assoc-endereco" aria-live="polite"></span>
+              </div>
+
+              <div class="form-grid-triplo">
+                <div class="form-grupo">
+                  <label for="campo-assoc-bairro">Bairro *</label>
+                  <input type="text" id="campo-assoc-bairro" name="bairro" placeholder="Ex: Marechal Rondon" required>
+                  <span class="msg-erro" id="erro-assoc-bairro" aria-live="polite"></span>
+                </div>
+
+                <div class="form-grupo">
+                  <label for="campo-assoc-cidade">Cidade/UF *</label>
+                  <input type="text" id="campo-assoc-cidade" name="cidade_uf" placeholder="Ex: Canoas/RS" required>
+                  <span class="msg-erro" id="erro-assoc-cidade" aria-live="polite"></span>
+                </div>
+
+                <div class="form-grupo">
+                  <label for="campo-assoc-cep">CEP *</label>
+                  <input type="text" id="campo-assoc-cep" name="cep" placeholder="92000-000" required maxlength="9">
+                  <span class="msg-erro" id="erro-assoc-cep" aria-live="polite"></span>
+                </div>
+              </div>
+
+              <div class="form-grupo">
+                <label for="campo-assoc-origem">Como conheceu a AAPC? *</label>
+                <select id="campo-assoc-origem" name="como_conheceu" required>
+                  <option value="">Selecione uma opção...</option>
+                  <option value="Instagram / Redes Sociais">Instagram / Redes Sociais (@ong_aapc_)</option>
+                  <option value="Indicação de Amigos / Familiares">Indicação de Amigos ou Familiares</option>
+                  <option value="Ações de Rua / Projetos da AAPC">Presenciando Ações de Rua ou Projetos</option>
+                  <option value="Universidade / Escola (La Salle, etc)">Universidade ou Escola parceira</option>
+                  <option value="Pesquisa Google / Internet">Pesquisa no Google / Internet</option>
+                  <option value="Outro canal">Outro canal</option>
+                </select>
+                <span class="msg-erro" id="erro-assoc-origem" aria-live="polite"></span>
+              </div>
+
+              <!-- Valor da Contribuição Mensal -->
+              <div class="form-grupo">
+                <label class="label-contribuicao">Valor da contribuição mensal desejada *</label>
+                <div class="seletor-valores-mensais">
+                  <button type="button" class="btn-pilula-valor active" data-valor="R$ 20,00">R$ 20,00</button>
+                  <button type="button" class="btn-pilula-valor" data-valor="R$ 50,00">R$ 50,00</button>
+                  <button type="button" class="btn-pilula-valor" data-valor="R$ 100,00">R$ 100,00</button>
+                  <button type="button" class="btn-pilula-valor" data-valor="outro">Outro valor</button>
+                </div>
+                <div class="campo-valor-customizado" id="box-valor-customizado" style="display: none; margin-top: 10px;">
+                  <label for="campo-assoc-valor-custom" style="font-size: 12.5px;">Digite o valor mensal desejado:</label>
+                  <input type="text" id="campo-assoc-valor-custom" placeholder="Ex: R$ 35,00">
+                </div>
+                <input type="hidden" id="campo-assoc-valor-final" name="valor_contribuicao" value="R$ 20,00">
+                <span class="msg-erro" id="erro-assoc-valor" aria-live="polite"></span>
+              </div>
+
+              <div class="form-grupo">
+                <label for="campo-assoc-obs">Observações (opcional)</label>
+                <textarea id="campo-assoc-obs" name="observacoes" rows="2" placeholder="Informações adicionais ou preferências de contato..."></textarea>
+              </div>
+
+              <!-- Termos de Aceite de Associado -->
+              <div class="caixa-termos-associado">
+                <label class="item-checkbox-aceite">
+                  <input type="checkbox" id="campo-assoc-estatuto" name="aceite_estatuto" required>
+                  <span>Declaro que desejo me associar e que estou de acordo com o <strong>Estatuto da Associação Amigos e Parceiros de Canoas</strong>. *</span>
+                </label>
+                <span class="msg-erro" id="erro-assoc-estatuto" aria-live="polite"></span>
+
+                <label class="item-checkbox-aceite" style="margin-top: 12px;">
+                  <input type="checkbox" id="campo-assoc-lgpd" name="aceite_lgpd" required>
+                  <span>Autorizo o uso dos dados informados para meu cadastro e para <strong>comunicações oficiais relacionadas à associação</strong> (em conformidade com a LGPD). *</span>
+                </label>
+                <span class="msg-erro" id="erro-assoc-lgpd" aria-live="polite"></span>
+              </div>
+
+              <div id="status-envio-associado" class="status-envio-box" aria-live="polite"></div>
+
+              <button type="submit" class="btn btn-enviar-associado" id="btn-submit-associado">
+                Confirmar Adesão de Associado Contribuinte
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
          Seja Voluntário (Envolva-se)
          ========================================================================= -->
     <section class="secao-voluntariado" id="voluntariado">
@@ -610,49 +794,186 @@
         </div>
 
         <div class="voluntariado-form-wrapper">
-          <div class="card-formulario">
-            <h3>Ficha de contato para novos voluntários</h3>
-            <p class="form-sub">Suas informações abrem uma conversa direta no WhatsApp da coordenação.</p>
+          <div class="card-formulario card-formulario-voluntario">
+            <div class="form-header-box">
+              <span class="tag-form">Programa de Voluntariado AAPC</span>
+              <h3>Ficha de Adesão ao Serviço Voluntário</h3>
+              <p class="form-sub">
+                Preencha os dados abaixo para ingressar no time de voluntários da Associação Amigos e Parceiros de Canoas.
+              </p>
+            </div>
             
             <form id="form-voluntario" novalidate>
-              <div class="form-grupo">
-                <label for="campo-nome">Seu nome completo *</label>
-                <input type="text" id="campo-nome" name="nome" placeholder="Ex: Maria da Silva" required>
-                <span class="msg-erro" id="erro-nome" aria-live="polite"></span>
+              <div class="form-grid-duplo">
+                <div class="form-grupo">
+                  <label for="campo-vol-nome">Nome completo *</label>
+                  <input type="text" id="campo-vol-nome" name="nome" placeholder="Ex: Maria da Silva" required>
+                  <span class="msg-erro" id="erro-vol-nome" aria-live="polite"></span>
+                </div>
+
+                <div class="form-grupo">
+                  <label for="campo-vol-nascimento">Data de nascimento *</label>
+                  <input type="date" id="campo-vol-nascimento" name="data_nascimento" required>
+                  <span class="msg-erro" id="erro-vol-nascimento" aria-live="polite"></span>
+                </div>
+              </div>
+
+              <div class="form-grid-duplo">
+                <div class="form-grupo">
+                  <label for="campo-vol-cpf">CPF *</label>
+                  <input type="text" id="campo-vol-cpf" name="cpf" placeholder="000.000.000-00" required maxlength="14">
+                  <span class="msg-erro" id="erro-vol-cpf" aria-live="polite"></span>
+                </div>
+
+                <div class="form-grupo">
+                  <label for="campo-vol-telefone">Telefone / WhatsApp com DDD *</label>
+                  <input type="tel" id="campo-vol-telefone" name="telefone" placeholder="(51) 99999-9999" required maxlength="15">
+                  <span class="msg-erro" id="erro-vol-telefone" aria-live="polite"></span>
+                </div>
+              </div>
+
+              <div class="form-grid-duplo">
+                <div class="form-grupo">
+                  <label for="campo-vol-email">E-mail *</label>
+                  <input type="email" id="campo-vol-email" name="email" placeholder="seuemail@exemplo.com" required>
+                  <span class="msg-erro" id="erro-vol-email" aria-live="polite"></span>
+                </div>
+
+                <div class="form-grupo">
+                  <label>Já participou de ações voluntárias antes? *</label>
+                  <div class="opcoes-radio">
+                    <label class="label-radio">
+                      <input type="radio" name="experiencia_previa" value="Sim" required>
+                      <span>Sim</span>
+                    </label>
+                    <label class="label-radio">
+                      <input type="radio" name="experiencia_previa" value="Não" checked>
+                      <span>Não</span>
+                    </label>
+                  </div>
+                </div>
               </div>
 
               <div class="form-grupo">
-                <label for="campo-whatsapp">WhatsApp com DDD *</label>
-                <input type="tel" id="campo-whatsapp" name="whatsapp" placeholder="(51) 99999-9999" required>
-                <span class="msg-erro" id="erro-whatsapp" aria-live="polite"></span>
+                <label for="campo-vol-endereco">Endereço completo (Rua, número, complemento, bairro, cidade e CEP) *</label>
+                <input type="text" id="campo-vol-endereco" name="endereco" placeholder="Ex: Rua das Flores, 120, Apto 3, Bairro Centro, Canoas - RS, CEP 92000-000" required>
+                <span class="msg-erro" id="erro-vol-endereco" aria-live="polite"></span>
               </div>
 
               <div class="form-grupo">
-                <label for="campo-area">Onde você prefere ajudar? *</label>
-                <select id="campo-area" name="area" required>
-                  <option value="">Selecione uma área...</option>
-                  <option value="Triagem de alimentos e cestas">Triagem de alimentos e montagem de cestas</option>
-                  <option value="Araras do Pegue e Leve">Araras do Pegue e Leve e doações de roupas</option>
-                  <option value="Brechó solidário na sede">Atendimento no Brechó Solidário</option>
-                  <option value="Visitas hospitalares">Projeto Bichinhos Caridosos</option>
-                  <option value="Logística e transporte">Apoio com transporte / logística</option>
-                  <option value="Onde precisar">Onde houver mais necessidade</option>
-                </select>
-                <span class="msg-erro" id="erro-area" aria-live="polite"></span>
+                <label class="label-grupo-checkbox">Áreas onde gostaria de ajudar (selecione uma ou mais) *</label>
+                <div class="grid-checkboxes-areas">
+                  <label class="item-checkbox">
+                    <input type="checkbox" name="areas_atuacao" value="Apoio na sede (separação de roupas, montagem de cestas, triagem, limpeza)">
+                    <span>Apoio na sede (separação de roupas, montagem de cestas, triagem e limpeza)</span>
+                  </label>
+                  <label class="item-checkbox">
+                    <input type="checkbox" name="areas_atuacao" value="Atividades externas e eventos de rua">
+                    <span>Atividades externas e eventos (apoio nas ações externas)</span>
+                  </label>
+                  <label class="item-checkbox">
+                    <input type="checkbox" name="areas_atuacao" value="Manutenção na sede (consertos, marcenaria, obras em geral)">
+                    <span>Manutenção na sede (consertos, marcenaria, obras em geral)</span>
+                  </label>
+                  <label class="item-checkbox">
+                    <input type="checkbox" name="areas_atuacao" value="Arrecadação de doações (alimentos, roupas, móveis, etc)">
+                    <span>Arrecadação de doações (alimentos, roupas, móveis, etc)</span>
+                  </label>
+                  <label class="item-checkbox">
+                    <input type="checkbox" name="areas_atuacao" value="Atendimento ao público (brechó e entrega de doações)">
+                    <span>Atendimento ao público (brechó solidário e entregas)</span>
+                  </label>
+                  <label class="item-checkbox">
+                    <input type="checkbox" name="areas_atuacao" value="Fretes e transporte em geral">
+                    <span>Fretes em geral e transporte de doações</span>
+                  </label>
+                  <label class="item-checkbox">
+                    <input type="checkbox" name="areas_atuacao" value="Recolhimento e entrega de doações">
+                    <span>Recolhimento e entrega de doações</span>
+                  </label>
+                  <label class="item-checkbox">
+                    <input type="checkbox" name="areas_atuacao" value="Blitz solidária em supermercados">
+                    <span>Blitz solidária (captação de alimentos em supermercados)</span>
+                  </label>
+                  <label class="item-checkbox">
+                    <input type="checkbox" name="areas_atuacao" value="Redes sociais e marketing">
+                    <span>Redes sociais e marketing digital</span>
+                  </label>
+                  <label class="item-checkbox">
+                    <input type="checkbox" name="areas_atuacao" value="Assistência social junto às comunidades">
+                    <span>Assistência social (visitas a comunidades e cadastro de famílias)</span>
+                  </label>
+                  <label class="item-checkbox">
+                    <input type="checkbox" name="areas_atuacao" value="Sem sair de casa (tricô, costura, divulgação)">
+                    <span>Sem sair de casa (tricô, costura, pequenos consertos e divulgação)</span>
+                  </label>
+                </div>
+                <span class="msg-erro" id="erro-vol-areas" aria-live="polite"></span>
               </div>
 
               <div class="form-grupo">
-                <label for="campo-disponibilidade">Sua disponibilidade</label>
-                <select id="campo-disponibilidade" name="disponibilidade">
-                  <option value="Finais de semana">Finais de semana</option>
-                  <option value="Dias de semana (manhã)">Dias de semana (manhã)</option>
-                  <option value="Dias de semana (tarde)">Dias de semana (tarde)</option>
-                  <option value="Horários flexíveis">Horários flexíveis</option>
-                </select>
+                <label for="campo-vol-motivacao">Qual a sua motivação para ajudar?</label>
+                <textarea id="campo-vol-motivacao" name="motivacao" rows="3" placeholder="Conte-nos um pouco sobre o que te inspira a ser voluntário(a) na AAPC..."></textarea>
               </div>
 
-              <button type="submit" class="btn btn-enviar-voluntario">
-                Enviar contato pelo WhatsApp
+              <div class="form-grupo">
+                <label>Autorização de uso de imagem nas redes sociais da AAPC *</label>
+                <div class="opcoes-radio">
+                  <label class="label-radio">
+                    <input type="radio" name="autorizacao_imagem" value="Autorizo" checked>
+                    <span>Autorizo a veiculação de fotos/vídeos em atividades institucionais</span>
+                  </label>
+                  <label class="label-radio">
+                    <input type="radio" name="autorizacao_imagem" value="Não autorizo">
+                    <span>Não autorizo</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Termo de Adesão ao Serviço Voluntário Oficial -->
+              <div class="caixa-termo-adesao">
+                <div class="termo-cabecalho-toggle" id="btn-toggle-termo" role="button" tabindex="0" aria-expanded="false" aria-controls="conteudo-termo-adesao">
+                  <div class="termo-toggle-texto">
+                    <span class="icone-termo">📜</span>
+                    <div>
+                      <strong>TERMO DE ADESÃO AO SERVIÇO VOLUNTÁRIO</strong>
+                      <span class="subtermo">Lei Federal nº 9.608/1998 e LGPD (Lei nº 13.709/2018) · Clique para ler na íntegra</span>
+                    </div>
+                  </div>
+                  <span class="seta-termo" id="seta-termo" aria-hidden="true">▼</span>
+                </div>
+
+                <div class="conteudo-termo-adesao" id="conteudo-termo-adesao">
+                  <div class="termo-documento">
+                    <h4>ONG ASSOCIAÇÃO AMIGOS E PARCEIROS DE CANOAS – AAPC</h4>
+                    <p class="termo-cnpj">CNPJ: 59.074.303/0001-00 · Rua Sete Povos, nº 312, Bairro Marechal Rondon, Canoas/RS</p>
+                    <p>Pelo presente Termo de Adesão ao Serviço Voluntário, o(a) participante manifesta seu interesse em atuar como voluntário(a) junto à ONG ASSOCIAÇÃO AMIGOS E PARCEIROS DE CANOAS – AAPC, declarando estar de acordo com as seguintes condições:</p>
+                    <ol>
+                      <li><strong>DO SERVIÇO VOLUNTÁRIO:</strong> O serviço voluntário será prestado de forma espontânea, sem percepção de remuneração, salário, gratificação ou qualquer contraprestação financeira, nos termos da Lei Federal nº 9.608, de 18 de fevereiro de 1998.</li>
+                      <li><strong>DA AUSÊNCIA DE VÍNCULO EMPREGATÍCIO:</strong> O(a) voluntário(a) declara estar ciente de que a prestação do serviço voluntário não gera vínculo empregatício, obrigação trabalhista, previdenciária ou afim entre as partes.</li>
+                      <li><strong>DAS ATIVIDADES:</strong> O(a) voluntário(a) poderá participar de atividades sociais, assistenciais, educacionais, culturais, recreativas, administrativas, de arrecadação de recursos, organização de eventos e demais ações desenvolvidas pela entidade, de acordo com sua disponibilidade, aptidão e necessidade da instituição.</li>
+                      <li><strong>DOS DEVERES DO VOLUNTÁRIO:</strong> O(a) voluntário(a) compromete-se a: a) atuar de forma ética, respeitosa e responsável; b) cumprir as orientações fornecidas pela coordenação da entidade; c) zelar pelo patrimônio, imagem e objetivos da instituição; d) respeitar a privacidade e a dignidade dos beneficiários, colaboradores e demais voluntários; e) comunicar previamente eventual impossibilidade de comparecimento às atividades previamente assumidas.</li>
+                      <li><strong>DA UTILIZAÇÃO DE IMAGEM:</strong> O(a) voluntário(a) autoriza, de forma gratuita, a utilização de sua imagem, voz e nome em fotografias, vídeos e materiais institucionais produzidos durante as atividades da entidade, para fins de divulgação das ações sociais da AAPC, em mídias impressas, digitais, redes sociais, website institucional e demais meios de comunicação, sem limitação territorial e por prazo indeterminado. Caso não concorde com esta autorização, o(a) voluntário(a) deverá comunicar formalmente a entidade antes do início de suas atividades.</li>
+                      <li><strong>DA PROTEÇÃO DE DADOS PESSOAIS:</strong> O(a) voluntário(a) autoriza a coleta, armazenamento e tratamento dos dados pessoais informados neste formulário para fins de cadastro, gestão do voluntariado, comunicação institucional e cumprimento de obrigações legais, em conformidade com a Lei Geral de Proteção de Dados Pessoais – LGPD (Lei nº 13.709/2018). A entidade compromete-se a utilizar os dados exclusivamente para finalidades relacionadas às suas atividades institucionais.</li>
+                      <li><strong>DO DESLIGAMENTO:</strong> O presente Termo poderá ser encerrado a qualquer momento, por iniciativa do(a) voluntário(a) ou da entidade, sem necessidade de justificativa e sem geração de qualquer direito indenizatório.</li>
+                      <li><strong>DA DECLARAÇÃO DE CONCORDÂNCIA:</strong> Ao selecionar a opção de concordância neste formulário e informar seus dados pessoais, o(a) participante declara que: 1) leu integralmente este Termo; 2) compreendeu seu conteúdo; 3) concorda livremente com todas as condições aqui estabelecidas; 4) manifesta seu interesse em atuar como voluntário(a) da AAPC; 5) reconhece que sua identificação eletrônica neste formulário equivale à sua assinatura para fins de adesão ao presente Termo.</li>
+                    </ol>
+                  </div>
+                </div>
+
+                <div class="aceite-termo-box">
+                  <label class="item-checkbox-aceite">
+                    <input type="checkbox" id="campo-vol-concordo-termo" name="concordo_termo" required>
+                    <span><strong>Declaro que li e concordo integralmente com os termos do TERMO DE ADESÃO AO SERVIÇO VOLUNTÁRIO</strong> da Associação Amigos e Parceiros de Canoas (AAPC). *</span>
+                  </label>
+                  <span class="msg-erro" id="erro-vol-termo" aria-live="polite"></span>
+                </div>
+              </div>
+
+              <div id="status-envio-voluntario" class="status-envio-box" aria-live="polite"></div>
+
+              <button type="submit" class="btn btn-enviar-voluntario" id="btn-submit-voluntario">
+                Confirmar e Enviar Adesão de Voluntário
               </button>
             </form>
           </div>

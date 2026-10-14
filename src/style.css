@@ -1203,10 +1203,214 @@ button, input, select, textarea {
 }
 
 .form-grupo input:focus,
-.form-grupo select:focus {
+.form-grupo select:focus,
+.form-grupo textarea:focus {
   outline: none;
   border-color: var(--verde-aapc);
   box-shadow: 0 0 0 3px rgba(0, 150, 57, 0.15);
+}
+
+.form-grupo textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid var(--borda);
+  border-radius: var(--radius-sm);
+  background-color: #FFFFFF;
+  color: var(--tinta);
+  font-family: var(--fonte-corpo);
+  font-size: 14.5px;
+  resize: vertical;
+  transition: var(--transicao);
+}
+
+.form-grid-duplo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.opcoes-radio {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.label-radio {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--tinta-media);
+  cursor: pointer;
+}
+
+.label-radio input[type="radio"] {
+  accent-color: var(--verde-aapc);
+  width: 18px;
+  height: 18px;
+}
+
+.label-grupo-checkbox {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.grid-checkboxes-areas {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  background-color: #FFFFFF;
+  border: 1.5px solid var(--borda);
+  border-radius: var(--radius-sm);
+  padding: 14px;
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+.item-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13.5px;
+  color: var(--tinta-media);
+  cursor: pointer;
+  line-height: 1.4;
+}
+
+.item-checkbox input[type="checkbox"] {
+  accent-color: var(--verde-aapc);
+  width: 17px;
+  height: 17px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+/* Acordeão do Termo de Adesão */
+.caixa-termo-adesao {
+  background-color: #F8FAF8;
+  border: 1.5px solid var(--borda);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  margin: 20px 0 16px;
+}
+
+.termo-cabecalho-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid var(--borda-suave);
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s ease;
+}
+
+.termo-cabecalho-toggle:hover {
+  background-color: var(--verde-suave);
+}
+
+.termo-toggle-texto {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.icone-termo {
+  font-size: 22px;
+}
+
+.termo-toggle-texto strong {
+  display: block;
+  font-size: 13.5px;
+  color: var(--tinta);
+}
+
+.termo-toggle-texto .subtermo {
+  display: block;
+  font-size: 11.5px;
+  color: var(--tinta-clara);
+}
+
+.seta-termo {
+  font-size: 12px;
+  color: var(--tinta-clara);
+  transition: transform 0.25s ease;
+}
+
+.caixa-termo-adesao.termo-aberto .seta-termo {
+  transform: rotate(180deg);
+}
+
+.conteudo-termo-adesao {
+  display: none;
+  padding: 18px 20px;
+  max-height: 320px;
+  overflow-y: auto;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid var(--borda);
+}
+
+.caixa-termo-adesao.termo-aberto .conteudo-termo-adesao {
+  display: block;
+}
+
+.termo-documento h4 {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--tinta);
+  margin-bottom: 4px;
+}
+
+.termo-cnpj {
+  font-size: 11.5px;
+  color: var(--tinta-clara);
+  margin-bottom: 10px;
+}
+
+.termo-documento p {
+  font-size: 12.5px;
+  color: var(--tinta-media);
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.termo-documento ol {
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.termo-documento ol li {
+  font-size: 12px;
+  color: var(--tinta-media);
+  line-height: 1.5;
+}
+
+.aceite-termo-box {
+  padding: 14px 16px;
+  background-color: #FAFCFA;
+}
+
+.item-checkbox-aceite {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--tinta);
+  cursor: pointer;
+  line-height: 1.4;
+}
+
+.item-checkbox-aceite input[type="checkbox"] {
+  accent-color: var(--verde-aapc);
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  flex-shrink: 0;
 }
 
 .form-grupo input.campo-invalido,
@@ -1243,6 +1447,250 @@ button, input, select, textarea {
 
 .btn-enviar-voluntario:active {
   transform: scale(0.98);
+}
+
+.btn-enviar-associado:disabled,
+.btn-enviar-voluntario:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ==========================================================================
+   Seja Nosso Associado (Seção & Ficha Cadastral)
+   ========================================================================== */
+.secao-associados {
+  padding: 90px 0;
+  background-color: var(--fundo-alt);
+  border-top: 1px solid var(--borda);
+  border-bottom: 1px solid var(--borda);
+}
+
+.associados-container {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 56px;
+  align-items: start;
+}
+
+.destaque-independencia {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background-color: #FFF9E6;
+  border: 1px solid #FFE08A;
+  border-left: 4px solid #F5B800;
+  padding: 16px 18px;
+  border-radius: var(--radius-sm);
+  margin: 20px 0;
+}
+
+.destaque-independencia p {
+  font-size: 14.5px;
+  color: #614700;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+.icone-alerta-verde {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.associados-desc {
+  font-size: 16px;
+  color: var(--tinta-media);
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+.beneficios-associado {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.beneficio-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.beneficio-check {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: var(--verde-suave);
+  color: var(--verde-aapc);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.beneficio-item strong {
+  display: block;
+  font-size: 15px;
+  color: var(--tinta);
+  margin-bottom: 2px;
+}
+
+.beneficio-item p {
+  font-size: 13.5px;
+  color: var(--tinta-media);
+  line-height: 1.4;
+  margin-bottom: 0;
+}
+
+.card-formulario-associados {
+  background-color: #FFFFFF;
+}
+
+.form-grid-triplo {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 14px;
+}
+
+/* Seletor de Contribuição Mensal */
+.label-contribuicao {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.seletor-valores-mensais {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn-pilula-valor {
+  flex: 1 1 calc(25% - 10px);
+  min-width: 80px;
+  padding: 10px 14px;
+  border: 1.5px solid var(--borda);
+  background-color: #FFFFFF;
+  color: var(--tinta);
+  font-family: var(--fonte-display);
+  font-weight: 700;
+  font-size: 14px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.btn-pilula-valor:hover {
+  border-color: #F5B800;
+  background-color: #FFFDF5;
+}
+
+.btn-pilula-valor.active {
+  border-color: #F5B800;
+  background-color: #F5B800;
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(245, 184, 0, 0.35);
+}
+
+.caixa-termos-associado {
+  background-color: var(--fundo-alt);
+  border: 1px solid var(--borda);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+  margin: 20px 0 16px;
+}
+
+.btn-enviar-associado {
+  width: 100%;
+  padding: 15px;
+  background-color: var(--verde-aapc);
+  color: #FFFFFF;
+  font-family: var(--fonte-corpo);
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transicao);
+  box-shadow: 0 4px 14px rgba(0, 150, 57, 0.25);
+  margin-top: 10px;
+}
+
+.btn-enviar-associado:hover {
+  background-color: var(--verde-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 150, 57, 0.35);
+}
+
+/* Status e Feedbacks de Envio */
+.status-envio-box {
+  margin-top: 14px;
+}
+
+.status-enviando {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #0A4D8C;
+  font-weight: 600;
+}
+
+.feedback-sucesso {
+  background-color: #EBF7EE;
+  border: 1.5px solid var(--verde-aapc);
+  padding: 18px;
+  border-radius: var(--radius-sm);
+  margin-top: 14px;
+}
+
+.feedback-sucesso h4 {
+  color: #007A2E;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.feedback-sucesso p {
+  color: #244830;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.btn-aviso-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #25D366;
+  color: #FFFFFF;
+  font-size: 13.5px;
+  font-weight: 700;
+  padding: 10px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+}
+
+.btn-aviso-whatsapp:hover {
+  background-color: #1EBE5D;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+.feedback-erro {
+  background-color: #FDF2F2;
+  border: 1.5px solid #E53935;
+  padding: 14px;
+  border-radius: var(--radius-sm);
+  color: #B71C1C;
+  font-size: 13.5px;
+  line-height: 1.45;
+  margin-top: 12px;
 }
 
 /* --------------------------------------------------------------------------
@@ -1571,6 +2019,11 @@ button, input, select, textarea {
     gap: 40px;
   }
 
+  .associados-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
   .voluntariado-grid {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -1639,6 +2092,16 @@ button, input, select, textarea {
 
   .badge-divisor {
     display: none;
+  }
+
+  .form-grid-duplo {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .form-grid-triplo {
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
 
   .grid-como-ajudar {
