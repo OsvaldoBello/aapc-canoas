@@ -1273,10 +1273,128 @@ button, input, select, textarea {
   color: #FFFFFF;
 }
 
+/* ==========================================================================
+   Hub Central: Como Eu Posso Ajudar? (3 Colunas Inspiradas na Referência)
+   ========================================================================== */
+.secao-como-ajudar {
+  padding: 80px 0;
+  background-color: #FFFFFF;
+}
+
+.cabecalho-como-ajudar {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.titulo-como-ajudar {
+  font-family: var(--fonte-display);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #261E58;
+  letter-spacing: -0.5px;
+}
+
+.linha-amarela-ajuda {
+  width: 68px;
+  height: 4px;
+  background-color: #F5B800;
+  border-radius: 2px;
+  margin: 16px auto 0;
+}
+
+.grid-como-ajudar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  align-items: stretch;
+}
+
+.card-ajuda {
+  background: #FFFFFF;
+  border: 1px solid #EBF0EC;
+  border-radius: 18px;
+  padding: 40px 28px 36px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.card-ajuda:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(12, 38, 20, 0.08);
+  border-color: rgba(245, 184, 0, 0.4);
+}
+
+.ajuda-icone {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background-color: #F5F4FA;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #382D6E;
+  margin-bottom: 22px;
+  transition: all 0.25s ease;
+}
+
+.card-ajuda:hover .ajuda-icone {
+  background-color: #EEF8F1;
+  color: var(--verde-aapc);
+  transform: scale(1.05);
+}
+
+.card-ajuda h3 {
+  font-family: var(--fonte-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #261E58;
+  margin-bottom: 14px;
+}
+
+.card-ajuda p {
+  font-size: 0.98rem;
+  color: #556259;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  flex-grow: 1;
+}
+
+.btn-ajuda-ouro {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #F3BA2F;
+  color: #FFFFFF;
+  font-family: var(--fonte-corpo);
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 12px 32px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(243, 186, 47, 0.35);
+}
+
+.btn-ajuda-ouro:hover {
+  background-color: #E0A71E;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(243, 186, 47, 0.5);
+}
+
 /* --------------------------------------------------------------------------
    Responsividade & Media Queries
    -------------------------------------------------------------------------- */
 @media (max-width: 1024px) {
+  .grid-como-ajudar {
+    gap: 24px;
+  }
+
   .hero-grid {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -1368,6 +1486,11 @@ button, input, select, textarea {
 
   .badge-divisor {
     display: none;
+  }
+
+  .grid-como-ajudar {
+    grid-template-columns: 1fr;
+    gap: 24px;
   }
 
   .grid-doacoes-essenciais {
