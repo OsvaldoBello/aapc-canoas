@@ -949,6 +949,159 @@ button, input, select, textarea {
   background-color: var(--fundo);
 }
 
+/* Bloco Pré-Formulário: Formas de Ajudar & Certificação */
+.tipos-ajuda-wrapper {
+  margin-bottom: 64px;
+  padding-bottom: 50px;
+  border-bottom: 1px solid var(--borda-suave);
+}
+
+.grid-tipos-ajuda {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  align-items: stretch;
+}
+
+.card-tipo-ajuda {
+  background-color: #FFFFFF;
+  border: 1px solid var(--borda);
+  border-radius: var(--radius-md);
+  padding: 30px 24px;
+  box-shadow: var(--sombra-sm);
+  display: flex;
+  flex-direction: column;
+  transition: var(--transicao);
+}
+
+.card-tipo-ajuda:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--sombra-md);
+}
+
+.tipo-ajuda-topo {
+  margin-bottom: 18px;
+}
+
+.badge-tipo-ajuda {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.badge-casa {
+  background-color: #FFF4E5;
+  color: #B25E00;
+}
+
+.badge-presencial {
+  background-color: var(--verde-suave);
+  color: var(--verde-aapc);
+}
+
+.badge-horas {
+  background-color: var(--azul-suave);
+  color: var(--azul-aapc);
+}
+
+.card-tipo-ajuda h3 {
+  font-family: var(--fonte-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--tinta);
+  line-height: 1.3;
+}
+
+.lista-tipo-ajuda {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.lista-tipo-ajuda li {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.lista-tipo-ajuda strong {
+  font-size: 14px;
+  color: var(--tinta);
+  font-weight: 700;
+}
+
+.lista-tipo-ajuda span {
+  font-size: 14px;
+  color: var(--tinta-media);
+  line-height: 1.5;
+}
+
+.card-certificacao {
+  border-color: #C2DDF6;
+  background: linear-gradient(180deg, #FFFFFF 0%, #F5F9FE 100%);
+}
+
+.certificacao-foto-box {
+  position: relative;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 14px rgba(10, 77, 140, 0.12);
+}
+
+.foto-certificacao {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.card-certificacao:hover .foto-certificacao {
+  transform: scale(1.04);
+}
+
+.legenda-foto-acao {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(0deg, rgba(8, 28, 48, 0.85) 0%, rgba(8, 28, 48, 0) 100%);
+  color: #FFFFFF;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 14px 10px 6px;
+}
+
+.certificacao-texto {
+  font-size: 14px;
+  color: var(--tinta-media);
+  line-height: 1.55;
+  margin-bottom: 14px;
+}
+
+.certificacao-destaque {
+  background-color: #E8F2FA;
+  border-left: 3px solid var(--azul-aapc);
+  padding: 10px 14px;
+  border-radius: 0 8px 8px 0;
+  font-size: 13px;
+  color: #0A4D8C;
+  line-height: 1.5;
+  margin-top: auto;
+}
+
+.certificacao-destaque strong {
+  display: block;
+  margin-bottom: 2px;
+  color: #073866;
+}
+
 .voluntariado-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1491,6 +1644,11 @@ button, input, select, textarea {
   .grid-como-ajudar {
     grid-template-columns: 1fr;
     gap: 24px;
+  }
+
+  .grid-tipos-ajuda {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .grid-doacoes-essenciais {
