@@ -10,6 +10,7 @@ const EMAIL_DESTINO_TESTE = 'osvaldooliveirabello@gmail.com';
 document.addEventListener('DOMContentLoaded', () => {
   configurarCopiaPix();
   configurarMascaras();
+  configurarAbasEngajamento();
   configurarTermoVoluntarioToggle();
   configurarFormularioVoluntario();
   configurarFormularioAssociado();
@@ -613,13 +614,73 @@ function configurarNavegacaoMobile() {
 }
 
 /* --------------------------------------------------------------------------
-   8. Rolagem Suave para Âncoras
+   8. Alternância de Abas de Engajamento (Voluntário / Associado)
+   -------------------------------------------------------------------------- */
+function configurarAbasEngajamento() {
+  const btnVoluntario = document.getElementById('tab-btn-voluntario');
+  const btnAssociado = document.getElementById('tab-btn-associado');
+  const painelVoluntario = document.getElementById('painel-voluntario');
+  const painelAssociado = document.getElementById('painel-associado');
+
+  if (!btnVoluntario || !btnAssociado || !painelVoluntario || !painelAssociado) return;
+
+  function alternarAba(tipo) {
+    if (tipo === 'associado') {
+      btnAssociado.classList.add('active');
+      btnAssociado.setAttribute('aria-selected', 'true');
+      btnVoluntario.classList.remove('active');
+      btnVoluntario.setAttribute('aria-selected', 'false');
+
+      painelAssociado.style.display = 'block';
+      painelAssociado.classList.add('active');
+      painelVoluntario.style.display = 'none';
+      painelVoluntario.classList.remove('active');
+    } else {
+      btnVoluntario.classList.add('active');
+      btnVoluntario.setAttribute('aria-selected', 'true');
+      btnAssociado.classList.remove('active');
+      btnAssociado.setAttribute('aria-selected', 'false');
+
+      painelVoluntario.style.display = 'block';
+      painelVoluntario.classList.add('active');
+      painelAssociado.style.display = 'none';
+      painelAssociado.classList.remove('active');
+    }
+  }
+
+  btnVoluntario.addEventListener('click', () => alternarAba('voluntario'));
+  btnAssociado.addEventListener('click', () => alternarAba('associado'));
+
+  // Interceptar cliques em links que apontam para #voluntariado ou #associados
+  document.querySelectorAll('a[href="#voluntariado"], a[href="#associados"]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      const href = link.getAttribute('href');
+      const tipo = href === '#associados' ? 'associado' : 'voluntario';
+      alternarAba(tipo);
+      const secao = document.getElementById('faca-parte') || document.querySelector('.secao-engajamento');
+      if (secao) {
+        e.preventDefault();
+        secao.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+
+  // Verificar hash da URL ao carregar
+  if (window.location.hash === '#associados') {
+    alternarAba('associado');
+  } else if (window.location.hash === '#voluntariado') {
+    alternarAba('voluntario');
+  }
+}
+
+/* --------------------------------------------------------------------------
+   9. Rolagem Suave para Âncoras
    -------------------------------------------------------------------------- */
 function configurarRolagemSuave() {
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       const targetId = this.getAttribute('href');
-      if (targetId === '#') return;
+      if (targetId === '#' || targetId === '#voluntariado' || targetId === '#associados') return;
       const targetElement = document.querySelector(targetId);
       if (targetElement) {
         e.preventDefault();
@@ -630,3 +691,4 @@ function configurarRolagemSuave() {
     });
   });
 }
+

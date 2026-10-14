@@ -1457,13 +1457,86 @@ button, input, select, textarea {
 }
 
 /* ==========================================================================
-   Seja Nosso Associado (Seção & Ficha Cadastral)
+/* ==========================================================================
+   Seção Unificada de Engajamento: Voluntário & Associado (#faca-parte)
    ========================================================================== */
-.secao-associados {
-  padding: 90px 0;
+.secao-engajamento {
+  padding: 85px 0 95px;
   background-color: var(--fundo-alt);
   border-top: 1px solid var(--borda);
   border-bottom: 1px solid var(--borda);
+  position: relative;
+}
+
+.ancora-alvo {
+  position: absolute;
+  top: -85px;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.seletor-abas-engajamento {
+  display: inline-flex;
+  background-color: #FFFFFF;
+  padding: 6px;
+  border-radius: var(--radius-full);
+  border: 1.5px solid var(--borda);
+  box-shadow: var(--sombra-sm);
+  margin: 28px auto 10px;
+  gap: 8px;
+}
+
+.btn-aba-engajamento {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 28px;
+  border-radius: var(--radius-full);
+  border: none;
+  background: transparent;
+  color: var(--tinta-media);
+  font-family: var(--fonte-display);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-aba-engajamento .aba-icone {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.btn-aba-engajamento:hover {
+  color: var(--verde-aapc);
+  background-color: var(--verde-suave);
+}
+
+.btn-aba-engajamento.active {
+  background-color: var(--verde-aapc);
+  color: #FFFFFF;
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(0, 150, 57, 0.28);
+}
+
+.painel-engajamento {
+  margin-top: 36px;
+}
+
+.painel-engajamento.active {
+  display: block;
+  animation: fadeInAba 0.3s ease;
+}
+
+@keyframes fadeInAba {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .associados-container {
@@ -1477,9 +1550,9 @@ button, input, select, textarea {
   display: flex;
   align-items: flex-start;
   gap: 14px;
-  background-color: #FFF9E6;
-  border: 1px solid #FFE08A;
-  border-left: 4px solid #F5B800;
+  background-color: #EBF7EE;
+  border: 1px solid #CDE7D5;
+  border-left: 4px solid var(--verde-aapc);
   padding: 16px 18px;
   border-radius: var(--radius-sm);
   margin: 20px 0;
@@ -1487,7 +1560,7 @@ button, input, select, textarea {
 
 .destaque-independencia p {
   font-size: 14.5px;
-  color: #614700;
+  color: #0C381E;
   line-height: 1.5;
   margin-bottom: 0;
 }
@@ -1554,7 +1627,7 @@ button, input, select, textarea {
   gap: 14px;
 }
 
-/* Seletor de Contribuição Mensal */
+/* Seletor de Contribuição Mensal em Verde Oficial AAPC */
 .label-contribuicao {
   display: block;
   font-weight: 600;
@@ -1584,15 +1657,16 @@ button, input, select, textarea {
 }
 
 .btn-pilula-valor:hover {
-  border-color: #F5B800;
-  background-color: #FFFDF5;
+  border-color: var(--verde-aapc);
+  background-color: var(--verde-suave);
+  color: var(--verde-aapc);
 }
 
 .btn-pilula-valor.active {
-  border-color: #F5B800;
-  background-color: #F5B800;
+  border-color: var(--verde-aapc);
+  background-color: var(--verde-aapc);
   color: #FFFFFF;
-  box-shadow: 0 4px 12px rgba(245, 184, 0, 0.35);
+  box-shadow: 0 4px 14px rgba(0, 150, 57, 0.3);
 }
 
 .caixa-termos-associado {
@@ -1898,7 +1972,7 @@ button, input, select, textarea {
 .linha-amarela-ajuda {
   width: 68px;
   height: 4px;
-  background-color: #F5B800;
+  background-color: var(--verde-aapc);
   border-radius: 2px;
   margin: 16px auto 0;
 }
@@ -1926,7 +2000,7 @@ button, input, select, textarea {
 .card-ajuda:hover {
   transform: translateY(-6px);
   box-shadow: 0 16px 36px rgba(12, 38, 20, 0.08);
-  border-color: rgba(245, 184, 0, 0.4);
+  border-color: rgba(0, 150, 57, 0.35);
 }
 
 .ajuda-icone {
@@ -1964,12 +2038,13 @@ button, input, select, textarea {
   flex-grow: 1;
 }
 
+.btn-ajuda-verde,
 .btn-ajuda-ouro {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background-color: #F3BA2F;
+  background-color: var(--verde-aapc);
   color: #FFFFFF;
   font-family: var(--fonte-corpo);
   font-size: 0.95rem;
@@ -1978,14 +2053,15 @@ button, input, select, textarea {
   border-radius: 8px;
   text-decoration: none;
   transition: all 0.2s ease;
-  box-shadow: 0 4px 14px rgba(243, 186, 47, 0.35);
+  box-shadow: 0 4px 14px rgba(0, 150, 57, 0.25);
 }
 
+.btn-ajuda-verde:hover,
 .btn-ajuda-ouro:hover {
-  background-color: #E0A71E;
+  background-color: var(--verde-hover);
   color: #FFFFFF;
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(243, 186, 47, 0.5);
+  box-shadow: 0 6px 18px rgba(0, 150, 57, 0.35);
 }
 
 /* --------------------------------------------------------------------------
@@ -2179,5 +2255,23 @@ button, input, select, textarea {
     flex: 1 1 calc(50% - 10px);
     min-width: 60px;
   }
+
+  .seletor-abas-engajamento {
+    display: flex;
+    width: 100%;
+    max-width: 400px;
+    border-radius: var(--radius-md);
+    margin: 20px auto 0;
+    box-sizing: border-box;
+  }
+
+  .btn-aba-engajamento {
+    flex: 1;
+    padding: 10px 12px;
+    font-size: 13.5px;
+    justify-content: center;
+    border-radius: var(--radius-sm);
+  }
 }
+
 

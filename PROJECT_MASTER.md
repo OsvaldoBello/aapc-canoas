@@ -20,30 +20,16 @@ O portal da **Associação Amigos e Parceiros de Canoas (AAPC)** une a autentici
      - **Doações**: Direcionamento para doações materiais permanentes e chave PIX.
      - **Voluntariado**: Convite à atuação presencial ou "sem sair de casa".
      - **Seja Associado**: Adesão a contribuições financeiras mensais recorrentes.
-   - Botões de chamada na cor ouro institucional (`#F3BA2F` / `#DFA51D`).
+   - Botões de chamada no Verde Oficial AAPC (`var(--verde-aapc)` / `#009639`).
 
-2. **Seção & Ficha Cadastral: "Seja Nosso Associado" (`#associados`)**:
-   - Chamada emotiva e realista: destaque de que a ONG é independente, não recebe recursos públicos municipais e depende da união da sociedade.
-   - Seletor de contribuição mensal com pílulas interativas (`R$ 20,00`, `R$ 50,00`, `R$ 100,00` e `Outro valor`).
-   - Formulário semântico com validação em tempo real e máscaras dinâmicas (CPF, Telefone/WhatsApp com DDD e CEP).
-   - Termos de aceite formal:
-     - Aceite do Estatuto Social da AAPC.
-     - Autorização de tratamento de dados e comunicações institucionais (em conformidade com a LGPD).
+2. **Seção Unificada de Engajamento: "Faça Parte da Nossa Causa" (`#faca-parte`)**:
+   - Consolidação dos dois fluxos de engajamento em uma **única seção central**, eliminando duplicação visual e otimizando a jornada do usuário.
+   - **Seletor de Abas Interativo**:
+     - `🤝 Quero ser Voluntário`: Ativa o painel de voluntariado com os blocos de ajuda domiciliar/presencial, foto institucional de horas complementares com a Universidade La Salle, formulário com 11 campos e o acordeão do Termo de Adesão ao Serviço Voluntário (8 artigos da Lei nº 9.608/1998).
+     - `💚 Quero ser Associado`: Ativa o painel de associado contribuinte com gancho de sustentabilidade e independência, seletor de valores mensais em pílulas verdes (`R$ 20,00`, `R$ 50,00`, `R$ 100,00` e `Outro valor`), formulário cadastral completo e consentimentos estatutário e LGPD.
+   - Suporte completo a navegação direta por âncoras (`#voluntariado` e `#associados`), com alternância automática da aba e rolagem suave.
 
-3. **Seção "Seja Voluntário" (`#voluntariado`)**:
-   - **Tipos de Ajuda & Sem Sair de Casa**:
-     - Atuação remota: tricô solidário, consertos em agasalhos, marketing digital e pontos de arrecadação em condomínios/empresas.
-     - Atuação presencial: montagem de cestas básicas, triagem de doações e ações de rua.
-   - **Credibilidade & Certificação Oficial**:
-     - Foto real da ação solidária com acadêmicos da **Universidade La Salle** (`public/img/fotos/acao-voluntarios-lasalle.jpg`).
-     - Emissão formal de certificados de horas complementares e extensão universitária.
-   - **Ficha Oficial de Adesão ao Serviço Voluntário**:
-     - 11 campos oficiais espelhados no formulário consolidado da ONG (experiência prévia, 11 áreas de atuação, motivação e autorização de imagem).
-   - **Termo de Adesão ao Serviço Voluntário Oficial**:
-     - Acordeão expansível com os 8 artigos completos baseados na **Lei Federal nº 9.608/1998** e LGPD (**Lei nº 13.709/2018**).
-     - Checkbox com aceite obrigatório das condições do termo.
-
-4. **Motor de Disparo Assíncrono por E-mail (FormSubmit AJAX)**:
+3. **Motor de Disparo Assíncrono por E-mail (FormSubmit AJAX)**:
    - Os formulários de Voluntariado e Associados não dependem exclusivamente de envio manual via WhatsApp.
    - Envio assíncrono via `fetch()` para o endpoint AJAX do FormSubmit (`https://formsubmit.co/ajax/osvaldooliveirabello@gmail.com`).
    - Bloqueio temporário do botão durante o envio com feedback em tempo real.
