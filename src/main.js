@@ -7,6 +7,10 @@ const CHAVE_PIX = '59.074.303/0001-00';
 // Em ambiente de produção: ongamigoseparceiroscanoas@gmail.com
 const EMAIL_DESTINO_TESTE = 'osvaldooliveirabello@gmail.com';
 
+// Webhook para planilha compartilhada (Google Sheets ou Excel 365 via Power Automate / Apps Script)
+// Insira a URL do Web App gerado no Google Sheets ou Power Automate para registrar cada envio em tempo real
+const WEBHOOK_PLANILHA_URL = '';
+
 document.addEventListener('DOMContentLoaded', () => {
   configurarCopiaPix();
   configurarMascaras();
@@ -523,18 +527,41 @@ function configurarFormularioAssociado() {
 }
 
 /* --------------------------------------------------------------------------
-   6. Motor de Envio Assíncrono por E-mail (FormSubmit AJAX)
+   6. Motor de Envio Assíncrono por E-mail e Planilha Compartilhada
    -------------------------------------------------------------------------- */
 async function enviarDadosEmail(dados, assunto, formElement, statusBox, submitBtn, tipo) {
   if (statusBox) {
     statusBox.innerHTML = `
       <div class="status-enviando">
-        <span>⏳ Enviando informações com segurança para a AAPC...</span>
+        <span>Enviando dados para a AAPC...</span>
       </div>`;
   }
   if (submitBtn) submitBtn.disabled = true;
 
   try {
+    // Disparo em paralelo para planilha compartilhada (se configurada a URL)
+    if (WEBHOOK_PLANILHA_URL) {
+      try {
+        fetch(WEBHOOK_PLANILHA_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            tipo_registro: tipo,
+            data_hora: new Date().toLocaleString('pt-BR'),
+            ...dados
+          })
+        }).catch(errPlanilha => {
+          console.warn('Registro em planilha compartilhada falhou silenciosamente:', errPlanilha);
+        });
+      } catch (errDisparo) {
+        console.warn('Falha ao acionar webhook da planilha:', errDisparo);
+      }
+    }
+
+    // Disparo para recebimento por e-mail via FormSubmit AJAX
     const response = await fetch(`https://formsubmit.co/ajax/${EMAIL_DESTINO_TESTE}`, {
       method: 'POST',
       headers: {
@@ -553,12 +580,12 @@ async function enviarDadosEmail(dados, assunto, formElement, statusBox, submitBt
 
     if (response.ok && (resultado.success === 'true' || resultado.success === true || resultado.message)) {
       const msgSucessoTitulo = tipo === 'voluntario' 
-        ? 'Inscrição de Voluntariado Recebida!' 
-        : 'Adesão de Associado Registrada!';
+        ? 'Inscrição de voluntariado recebida' 
+        : 'Adesão de associado registrada';
 
       const msgSucessoTexto = tipo === 'voluntario'
-        ? `Muito obrigado por se voluntariar, <strong>${dados.nome_completo}</strong>! Seus dados foram arquivados com sucesso em nosso e-mail oficial e a coordenação da AAPC entrará em contato.`
-        : `Gratidão imensa pelo seu apoio mensal, <strong>${dados.nome_completo}</strong>! Sua adesão como associado garante a continuidade das nossas ações para quem mais tem fome.`;
+        ? `Muito obrigado por se voluntariar, <strong>${dados.nome_completo}</strong>! Seus dados foram arquivados com sucesso e a equipe da AAPC entrará em contato em breve.`
+        : `Gratidão pelo seu apoio mensal, <strong>${dados.nome_completo}</strong>! Sua adesão garante comida na mesa e acolhimento para famílias em vulnerabilidade em Canoas.`;
 
       const msgWhatsApp = encodeURIComponent(
         `Olá! Acabei de enviar minha ficha de ${tipo === 'voluntario' ? 'voluntário' : 'associado'} pelo site da AAPC (${dados.nome_completo}) e gostaria de confirmar o recebimento.`
@@ -567,10 +594,10 @@ async function enviarDadosEmail(dados, assunto, formElement, statusBox, submitBt
       if (statusBox) {
         statusBox.innerHTML = `
           <div class="feedback-sucesso">
-            <h4>✅ ${msgSucessoTitulo}</h4>
+            <h4>${msgSucessoTitulo}</h4>
             <p>${msgSucessoTexto}</p>
             <a href="https://wa.me/${WHATSAPP_AAPC}?text=${msgWhatsApp}" target="_blank" rel="noopener noreferrer" class="btn-aviso-whatsapp">
-              <span>💬 Deseja avisar a coordenação no WhatsApp? (Opcional)</span>
+              <span>Avisar a coordenação no WhatsApp (opcional)</span>
             </a>
           </div>`;
       }
@@ -583,7 +610,7 @@ async function enviarDadosEmail(dados, assunto, formElement, statusBox, submitBt
     if (statusBox) {
       statusBox.innerHTML = `
         <div class="feedback-erro">
-          <p>⚠️ Não foi possível registrar os dados automaticamente no momento. Por favor, tente novamente ou entre em contato diretamente pelo nosso WhatsApp oficial <strong>(51) 99270-1114</strong>.</p>
+          <p>Não foi possível enviar os dados automaticamente no momento. Por favor, tente novamente ou entre em contato diretamente pelo nosso WhatsApp oficial no <strong>(51) 99270-1114</strong>.</p>
         </div>`;
     }
   } finally {
