@@ -569,38 +569,47 @@ button, input, select, textarea {
 
 .card-doacao-topo {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  margin-bottom: 16px;
+  gap: 10px;
+  margin-bottom: 18px;
 }
 
 .card-doacao-icone {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
   background-color: var(--verde-suave);
   color: var(--verde-aapc);
   flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.card-doacao:hover .card-doacao-icone {
+  transform: scale(1.08);
 }
 
 .card-doacao-icone svg {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
 }
 
 .card-doacao-categoria {
-  font-size: 11.5px;
+  display: inline-block;
+  font-size: 11px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--verde-aapc);
   background-color: var(--verde-suave);
-  padding: 5px 12px;
+  padding: 4px 14px;
   border-radius: 999px;
+  text-align: center;
+  white-space: nowrap;
 }
 
 .card-doacao h3 {
@@ -1040,10 +1049,14 @@ button, input, select, textarea {
 
 .foto-tipo-ajuda {
   width: 100%;
-  height: 160px;
+  height: 175px;
   object-fit: cover;
   display: block;
   transition: transform 0.4s ease;
+}
+
+.foto-tipo-ajuda-comunidades {
+  object-position: center 20%;
 }
 
 .card-tipo-ajuda:hover .foto-tipo-ajuda {
@@ -1168,7 +1181,7 @@ button, input, select, textarea {
   margin-bottom: 18px;
 }
 
-.form-grupo label {
+.form-grupo > label {
   display: block;
   font-size: 13.5px;
   font-weight: 600;
@@ -1176,7 +1189,7 @@ button, input, select, textarea {
   margin-bottom: 6px;
 }
 
-.form-grupo input,
+.form-grupo input:not([type="checkbox"]):not([type="radio"]),
 .form-grupo select {
   width: 100%;
   padding: 12px 14px;
@@ -1222,19 +1235,33 @@ button, input, select, textarea {
   margin-top: 6px;
 }
 
+.form-grupo .label-radio,
 .label-radio {
-  display: inline-flex;
+  display: flex !important;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   font-size: 14px;
-  color: var(--tinta-media);
+  font-weight: 400;
+  color: var(--tinta);
   cursor: pointer;
+  margin: 0;
+  line-height: 1.4;
+  user-select: none;
 }
 
 .label-radio input[type="radio"] {
   accent-color: var(--verde-aapc);
   width: 18px;
   height: 18px;
+  margin: 0;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.label-radio span {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
 }
 
 .label-grupo-checkbox {
@@ -1244,33 +1271,62 @@ button, input, select, textarea {
 }
 
 .grid-checkboxes-areas {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 8px;
-  background-color: #FFFFFF;
+  background-color: #F8FAF9;
   border: 1.5px solid var(--borda);
   border-radius: var(--radius-sm);
-  padding: 14px;
-  max-height: 220px;
+  padding: 10px;
+  max-height: 250px;
   overflow-y: auto;
+  overscroll-behavior: contain;
 }
 
+.form-grupo .item-checkbox,
 .item-checkbox {
-  display: flex;
+  display: flex !important;
   align-items: flex-start;
-  gap: 10px;
+  gap: 12px;
+  padding: 10px 12px;
+  background-color: #FFFFFF;
+  border: 1px solid var(--borda);
+  border-radius: 6px;
   font-size: 13.5px;
-  color: var(--tinta-media);
+  font-weight: 400;
+  color: var(--tinta);
   cursor: pointer;
   line-height: 1.4;
+  margin: 0;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.item-checkbox:hover {
+  background-color: #F0F9F3;
+  border-color: rgba(30, 126, 52, 0.35);
+}
+
+.item-checkbox:has(input:checked) {
+  background-color: #EBF7EE;
+  border-color: var(--verde-aapc);
+  font-weight: 500;
 }
 
 .item-checkbox input[type="checkbox"] {
   accent-color: var(--verde-aapc);
-  width: 17px;
-  height: 17px;
-  margin-top: 2px;
+  width: 18px;
+  height: 18px;
+  margin: 1px 0 0 0;
   flex-shrink: 0;
+  cursor: pointer;
+}
+
+.item-checkbox span {
+  flex: 1;
+  font-size: 13.5px;
+  font-weight: 400;
+  line-height: 1.4;
 }
 
 /* Acordeão do Termo de Adesão */
@@ -1390,22 +1446,34 @@ button, input, select, textarea {
   background-color: #FAFCFA;
 }
 
+.form-grupo .item-checkbox-aceite,
 .item-checkbox-aceite {
-  display: flex;
+  display: flex !important;
   align-items: flex-start;
-  gap: 10px;
+  gap: 12px;
   font-size: 13px;
+  font-weight: 400;
   color: var(--tinta);
   cursor: pointer;
   line-height: 1.4;
+  margin: 0;
+  user-select: none;
 }
 
 .item-checkbox-aceite input[type="checkbox"] {
   accent-color: var(--verde-aapc);
   width: 18px;
   height: 18px;
-  margin-top: 2px;
+  margin: 1px 0 0 0;
   flex-shrink: 0;
+  cursor: pointer;
+}
+
+.item-checkbox-aceite span {
+  flex: 1;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.4;
 }
 
 .form-grupo input.campo-invalido,
@@ -2266,9 +2334,6 @@ button, input, select, textarea {
     padding: 12px 14px;
   }
 
-  .grid-checkboxes-areas {
-    grid-template-columns: 1fr;
-  }
 
   .seletor-valores-mensais .btn-pilula-valor {
     flex: 1 1 calc(50% - 10px);

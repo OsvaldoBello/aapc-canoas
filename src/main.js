@@ -2,14 +2,15 @@
 const WHATSAPP_AAPC = '5551992701114';
 const CHAVE_PIX = '59.074.303/0001-00';
 
-// E-mail de destino dos formulários:
-// Em ambiente de teste: osvaldooliveirabello@gmail.com
-// Em ambiente de produção: ongamigoseparceiroscanoas@gmail.com
-const EMAIL_DESTINO_TESTE = 'osvaldooliveirabello@gmail.com';
+// E-mail oficial de destino dos formulários da AAPC:
+const EMAIL_DESTINO = 'ongamigoseparceiroscanoas@gmail.com';
 
-// Webhook para planilha compartilhada (Google Sheets ou Excel 365 via Power Automate / Apps Script)
-// Insira a URL do Web App gerado no Google Sheets ou Power Automate para registrar cada envio em tempo real
-const WEBHOOK_PLANILHA_URL = '';
+// Webhook para planilhas compartilhadas (Google Sheets / Apps Script)
+// Planilha 1: Voluntariado (Web App ativo configurado)
+const WEBHOOK_PLANILHA_VOLUNTARIO = 'https://script.google.com/macros/s/AKfycbxRw-D6kKkmEwJjAjHc6B-7P_voKPsDbAfM6YTXTEmBLfwa88oMcn4K1hfYTiMRC7Cg/exec';
+
+// Planilha 2: Associados Contribuintes (Insira aqui a URL do Web App gerado para a planilha separada de associados)
+const WEBHOOK_PLANILHA_ASSOCIADO = 'https://script.google.com/macros/s/AKfycby4KOHK8T0k79V-18W5S-xIIYcNu6YCveAc8o6xitlx3HV6WMJQUeeibzEXa4fexJkByw/exec';
 
 document.addEventListener('DOMContentLoaded', () => {
   configurarCopiaPix();
@@ -264,8 +265,10 @@ function configurarFormularioVoluntario() {
       nome_completo: campoNome.value.trim(),
       data_nascimento: campoNasc.value,
       cpf: campoCPF.value.trim(),
+      telefone: campoTel.value.trim(),
       telefone_whatsapp: campoTel.value.trim(),
       email: campoEmail.value.trim(),
+      endereco: campoEndereco.value.trim(),
       endereco_completo: campoEndereco.value.trim(),
       experiencia_previa: expPrevia,
       areas_de_interesse: areasSelecionadas,
@@ -275,7 +278,7 @@ function configurarFormularioVoluntario() {
       data_registro: new Date().toLocaleString('pt-BR')
     };
 
-    const assunto = `[AAPC Voluntariado] ${payload.nome_completo}`;
+    const assunto = `[AAPC - Ficha de Voluntariado] ${payload.nome_completo}`;
     await enviarDadosEmail(payload, assunto, form, statusBox, submitBtn, 'voluntario');
   });
 }
@@ -506,14 +509,17 @@ function configurarFormularioAssociado() {
       nome_completo: campoNome.value.trim(),
       data_nascimento: campoNasc.value,
       cpf: campoCPF.value.trim(),
+      telefone: campoTel.value.trim(),
       telefone_whatsapp: campoTel.value.trim(),
       email: campoEmail.value.trim(),
       profissao: campoProfissao.value.trim(),
+      endereco: `${campoEndereco.value.trim()} - ${campoBairro.value.trim()}, ${campoCidade.value.trim()} (CEP: ${campoCEP.value.trim()})`,
       endereco_logradouro: campoEndereco.value.trim(),
       bairro: campoBairro.value.trim(),
       cidade_uf: campoCidade.value.trim(),
       cep: campoCEP.value.trim(),
       como_conheceu_a_ong: campoOrigem.value,
+      valor: campoValorFinal.value,
       valor_contribuicao_mensal: campoValorFinal.value,
       observacoes: campoObs.value.trim() || 'Nenhuma',
       concordancia_estatuto: 'SIM - Concordou com o Estatuto da Associação',
@@ -521,7 +527,7 @@ function configurarFormularioAssociado() {
       data_registro: new Date().toLocaleString('pt-BR')
     };
 
-    const assunto = `[AAPC Novo Associado] ${payload.nome_completo}`;
+    const assunto = `[AAPC - Adesão de Associado Contribuinte] ${payload.nome_completo}`;
     await enviarDadosEmail(payload, assunto, form, statusBox, submitBtn, 'associado');
   });
 }
@@ -539,14 +545,15 @@ async function enviarDadosEmail(dados, assunto, formElement, statusBox, submitBt
   if (submitBtn) submitBtn.disabled = true;
 
   try {
-    // Disparo em paralelo para planilha compartilhada (se configurada a URL)
-    if (WEBHOOK_PLANILHA_URL) {
+    // Disparo em paralelo para planilha compartilhada (conforme o tipo de formulário)
+    const webhookUrl = tipo === 'voluntario' ? WEBHOOK_PLANILHA_VOLUNTARIO : WEBHOOK_PLANILHA_ASSOCIADO;
+    if (webhookUrl) {
       try {
-        fetch(WEBHOOK_PLANILHA_URL, {
+        fetch(webhookUrl, {
           method: 'POST',
           mode: 'no-cors',
           headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'text/plain;charset=utf-8'
           },
           body: JSON.stringify({
             tipo_registro: tipo,
@@ -559,10 +566,12 @@ async function enviarDadosEmail(dados, assunto, formElement, statusBox, submitBt
       } catch (errDisparo) {
         console.warn('Falha ao acionar webhook da planilha:', errDisparo);
       }
+    } else if (tipo === 'associado') {
+      console.info('Aviso: WEBHOOK_PLANILHA_ASSOCIADO ainda não configurado. Os dados foram enviados com sucesso por e-mail.');
     }
 
     // Disparo para recebimento por e-mail via FormSubmit AJAX
-    const response = await fetch(`https://formsubmit.co/ajax/${EMAIL_DESTINO_TESTE}`, {
+    const response = await fetch(`https://formsubmit.co/ajax/${EMAIL_DESTINO}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -579,13 +588,13 @@ async function enviarDadosEmail(dados, assunto, formElement, statusBox, submitBt
     const resultado = await response.json();
 
     if (response.ok && (resultado.success === 'true' || resultado.success === true || resultado.message)) {
-      const msgSucessoTitulo = tipo === 'voluntario' 
-        ? 'Inscrição de voluntariado recebida' 
-        : 'Adesão de associado registrada';
+      const msgSucessoTitulo = tipo === 'voluntario'
+        ? 'Inscrição de voluntariado recebida'
+        : 'Ficha de associado enviada com sucesso';
 
       const msgSucessoTexto = tipo === 'voluntario'
         ? `Muito obrigado por se voluntariar, <strong>${dados.nome_completo}</strong>! Seus dados foram arquivados com sucesso e a equipe da AAPC entrará em contato em breve.`
-        : `Gratidão pelo seu apoio mensal, <strong>${dados.nome_completo}</strong>! Sua adesão garante comida na mesa e acolhimento para famílias em vulnerabilidade em Canoas.`;
+        : `Muito obrigado por apoiar a AAPC, <strong>${dados.nome_completo}</strong>! Seus dados foram registrados com sucesso. A coordenação da ONG entrará em contato com você nos próximos dias para melhor alinhamento e boas-vindas.`;
 
       const msgWhatsApp = encodeURIComponent(
         `Olá! Acabei de enviar minha ficha de ${tipo === 'voluntario' ? 'voluntário' : 'associado'} pelo site da AAPC (${dados.nome_completo}) e gostaria de confirmar o recebimento.`
@@ -708,6 +717,16 @@ function configurarRolagemSuave() {
     anchor.addEventListener('click', function (e) {
       const targetId = this.getAttribute('href');
       if (targetId === '#' || targetId === '#voluntariado' || targetId === '#associados') return;
+
+      if (targetId === '#topo') {
+        e.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+        return;
+      }
+
       const targetElement = document.querySelector(targetId);
       if (targetElement) {
         e.preventDefault();
@@ -717,5 +736,16 @@ function configurarRolagemSuave() {
       }
     });
   });
+
+  const btnVoltarTopo = document.querySelector('.voltar-topo');
+  if (btnVoltarTopo) {
+    btnVoltarTopo.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
 }
 
