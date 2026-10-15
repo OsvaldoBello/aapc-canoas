@@ -418,22 +418,25 @@ button, input, select, textarea {
 .subtitulo-secao {
   display: inline-block;
   font-family: var(--fonte-display);
-  font-size: 13px;
+  font-size: 12.5px;
   font-weight: 700;
   color: var(--verde-aapc);
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-bottom: 8px;
+  letter-spacing: 0.06em;
+  background-color: var(--verde-suave);
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-bottom: 12px;
 }
 
 .titulo-secao {
   font-family: var(--fonte-display);
-  font-size: clamp(26px, 3.2vw, 38px);
-  font-weight: 800;
-  line-height: 1.2;
-  letter-spacing: -0.015em;
+  font-size: clamp(24px, 2.8vw, 34px);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
   color: var(--tinta);
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 .cabecalho-secao-centro {
@@ -567,7 +570,8 @@ button, input, select, textarea {
 .card-doacao-topo {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 12px;
   margin-bottom: 16px;
 }
 
@@ -575,43 +579,46 @@ button, input, select, textarea {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   border-radius: 10px;
   background-color: var(--verde-suave);
   color: var(--verde-aapc);
+  flex-shrink: 0;
 }
 
 .card-doacao-icone svg {
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
 }
 
 .card-doacao-categoria {
-  font-size: 11px;
+  font-size: 11.5px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--verde-aapc);
   background-color: var(--verde-suave);
-  padding: 4px 8px;
-  border-radius: 4px;
+  padding: 5px 12px;
+  border-radius: 999px;
 }
 
 .card-doacao h3 {
   font-family: var(--fonte-display);
-  font-size: 18px;
+  font-size: 19px;
   font-weight: 700;
   color: var(--tinta);
   line-height: 1.3;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
+  text-align: center;
 }
 
 .card-doacao-desc {
-  font-size: 14px;
+  font-size: 13.5px;
   color: var(--tinta-media);
   line-height: 1.5;
   margin-bottom: 18px;
+  text-align: center;
 }
 
 .lista-itens-doacao {
@@ -649,6 +656,10 @@ button, input, select, textarea {
   color: var(--verde-aapc);
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+  padding-top: 6px;
   gap: 4px;
   transition: var(--transicao);
 }
@@ -978,7 +989,7 @@ button, input, select, textarea {
   background-color: #FFFFFF;
   border: 1px solid var(--borda);
   border-radius: var(--radius-md);
-  padding: 30px 24px;
+  padding: 28px 24px;
   box-shadow: var(--sombra-sm);
   display: flex;
   flex-direction: column;
@@ -988,36 +999,24 @@ button, input, select, textarea {
 .card-tipo-ajuda:hover {
   transform: translateY(-4px);
   box-shadow: var(--sombra-md);
+  border-color: var(--verde-aapc);
 }
 
 .tipo-ajuda-topo {
-  margin-bottom: 18px;
+  margin-bottom: 0;
 }
 
-.badge-tipo-ajuda {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 5px 12px;
-  border-radius: 999px;
-  font-size: 13px;
+.tipo-ajuda-tag {
+  display: inline-block;
+  font-size: 11.5px;
   font-weight: 700;
-  margin-bottom: 12px;
-}
-
-.badge-casa {
-  background-color: #FFF4E5;
-  color: #B25E00;
-}
-
-.badge-presencial {
-  background-color: var(--verde-suave);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   color: var(--verde-aapc);
-}
-
-.badge-horas {
-  background-color: var(--azul-suave);
-  color: var(--azul-aapc);
+  background-color: var(--verde-suave);
+  padding: 4px 10px;
+  border-radius: 6px;
+  margin-bottom: 8px;
 }
 
 .card-tipo-ajuda h3 {
@@ -1025,40 +1024,11 @@ button, input, select, textarea {
   font-size: 20px;
   font-weight: 700;
   color: var(--tinta);
-  line-height: 1.3;
+  line-height: 1.25;
+  margin: 0;
+  min-height: 25px;
 }
 
-.lista-tipo-ajuda {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.lista-tipo-ajuda li {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-}
-
-.lista-tipo-ajuda strong {
-  font-size: 14px;
-  color: var(--tinta);
-  font-weight: 700;
-}
-
-.lista-tipo-ajuda span {
-  font-size: 14px;
-  color: var(--tinta-media);
-  line-height: 1.5;
-}
-
-.card-certificacao {
-  border-color: #C2DDF6;
-  background: linear-gradient(180deg, #FFFFFF 0%, #F5F9FE 100%);
-}
-
-.certificacao-foto-box,
 .tipo-ajuda-foto-box {
   position: relative;
   border-radius: var(--radius-sm);
@@ -1068,7 +1038,6 @@ button, input, select, textarea {
   box-shadow: 0 4px 14px rgba(18, 22, 25, 0.08);
 }
 
-.foto-certificacao,
 .foto-tipo-ajuda {
   width: 100%;
   height: 160px;
@@ -1077,7 +1046,6 @@ button, input, select, textarea {
   transition: transform 0.4s ease;
 }
 
-.card-certificacao:hover .foto-certificacao,
 .card-tipo-ajuda:hover .foto-tipo-ajuda {
   transform: scale(1.04);
 }
@@ -1094,28 +1062,30 @@ button, input, select, textarea {
   padding: 14px 10px 6px;
 }
 
-.certificacao-texto {
+.lista-tipo-ajuda {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex-grow: 1;
+}
+
+.lista-tipo-ajuda li {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.lista-tipo-ajuda strong {
   font-size: 14px;
+  color: var(--tinta);
+  font-weight: 700;
+}
+
+.lista-tipo-ajuda span {
+  font-size: 13.5px;
   color: var(--tinta-media);
-  line-height: 1.55;
-  margin-bottom: 14px;
-}
-
-.certificacao-destaque {
-  background-color: #E8F2FA;
-  border-left: 3px solid var(--azul-aapc);
-  padding: 10px 14px;
-  border-radius: 0 8px 8px 0;
-  font-size: 13px;
-  color: #0A4D8C;
   line-height: 1.5;
-  margin-top: auto;
-}
-
-.certificacao-destaque strong {
-  display: block;
-  margin-bottom: 2px;
-  color: #073866;
 }
 
 .voluntariado-grid {
