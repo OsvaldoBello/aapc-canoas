@@ -108,6 +108,33 @@ def run_verification():
         print("[OK] Ficha cadastral de associado e consentimentos estatutarios/LGPD validados.", flush=True)
         secao_engajamento.screenshot(path=f"{OUTPUT_DIR}/desktop_engajamento_associado.png")
 
+        # 1.5 Validar Novas Atualizações da ONG AAPC (Doações, Projetos, Horários e Contatos)
+        print("\n--- Verificando novas melhorias da ONG AAPC ---", flush=True)
+        secao_doacoes = page_desktop.locator('#o-que-doar')
+        assert secao_doacoes.is_visible(), "Secao #o-que-doar deve estar visivel"
+        assert "cesta básica \"slim\"" in secao_doacoes.inner_text().lower() or "slim" in secao_doacoes.inner_text().lower(), "Texto da cesta slim deve estar presente em doacoes"
+        assert "cuidado infantil e idosos" in secao_doacoes.inner_text().lower(), "Card Cuidado Infantil e Idosos deve estar presente"
+        assert "tampinhas" in secao_doacoes.inner_text().lower(), "Tampinhas e blisters devem constar nas doacoes"
+        secao_doacoes.screenshot(path=f"{OUTPUT_DIR}/desktop_doacoes_slim.png")
+        print("[OK] Cards de doações validados (Cesta Slim, Vestuário/Utensílios, Cuidado Infantil e Idosos).", flush=True)
+
+        secao_projetos = page_desktop.locator('#projetos')
+        assert secao_projetos.is_visible(), "Secao #projetos deve estar visivel"
+        assert "projeto nananenê" in secao_projetos.inner_text().lower(), "Projeto NanaNene deve estar listado nos projetos"
+        assert "região metropolitana" in secao_projetos.inner_text().lower(), "Regiao metropolitana deve constar no Pegue e Leve"
+        img_nananene = page_desktop.locator('img[src*="projeto-nananene.jpg"]')
+        assert img_nananene.is_visible(), "Foto do Projeto NanaNene deve estar visivel"
+        secao_projetos.screenshot(path=f"{OUTPUT_DIR}/desktop_projetos_nananene.png")
+        print("[OK] Seção Projetos validada (Projeto NanaNenê com foto real, Pegue e Leve e Bichinhos Caridosos).", flush=True)
+
+        secao_local = page_desktop.locator('#onde-estamos')
+        assert secao_local.is_visible(), "Secao #onde-estamos deve estar visivel"
+        assert "loja essence" in secao_local.inner_text().lower(), "Ponto de coleta parceiro Loja Essence deve estar presente"
+        assert "98133-4287" in secao_local.inner_text(), "Telefone da Rosa (Coordenação) deve estar presente"
+        assert "14h às 18h" in secao_local.inner_text(), "Horarios atualizados 14h as 18h devem estar presentes"
+        secao_local.screenshot(path=f"{OUTPUT_DIR}/desktop_sede_horarios_essence.png")
+        print("[OK] Seção Localização & Contato validada (Loja Essence, horário 14h-18h e contato da Rosa).", flush=True)
+
         # --- TESTE 2: MOBILE VIEWPORT (375 x 812) ---
         print("\n=== TESTE 2: MOBILE VIEWPORT (375x812) ===", flush=True)
         page_mobile = browser.new_page(viewport={'width': 375, 'height': 812})

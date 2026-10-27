@@ -1,6 +1,6 @@
 # DOCUMENTO MESTRE DO PROJETO (MASTER SPEC)
 ## Portal Voluntário & Captação Solidária: ONG AAPC Canoas
-> **Documento Vivo do Projeto**: Versão 5.0 (Humanização Integral, Acervo Fotográfico Real & Integração com Planilha Compartilhada Excel / Google Sheets)  
+> **Documento Vivo do Projeto**: Versão 6.0 (Atualizações Oficiais da Diretoria da AAPC: Projeto NanaNenê com Foto Real Anonimizada, Cesta Slim, Ponto de Coleta Loja Essence, Contato da Rosa e Novos Horários)  
 > **Status Atual**: Concluído, Validado Visualmente, Responsivo e Testado via Playwright  
 > **Repositório**: `c:\Users\Osvaldo\OneDrive\Desktop\AAPC`  
 > **Target de Hospedagem**: Vercel  
@@ -22,90 +22,67 @@ O portal da **Associação Amigos e Parceiros de Canoas (AAPC)** une a autentici
      - **Seja Associado**: Adesão a contribuições financeiras mensais recorrentes.
    - Botões de chamada no Verde Oficial AAPC (`var(--verde-aapc)` / `#009639`).
 
-2. **Seção Unificada de Engajamento: "Faça Parte da Nossa Causa" (`#faca-parte`)**:
-   - Consolidação dos dois fluxos de engajamento em uma **única seção central**, eliminando duplicação visual e otimizando a jornada do usuário.
+2. **Seção "O Que Você Pode Doar na Sede" (`#o-que-doar`)**:
+   - **Card 1 (Segurança Alimentar - Alimentos Não Perecíveis)**: Foco na cesta básica *"slim"* para atendimento emergencial e famílias cadastradas (arroz, feijão, óleo de soja, massa, açúcar, leite em caixa e complementos como café, farinha, polenta, sal, achocolatado, erva-mate/Chima, molhos e enlatados).
+   - **Card 2 (Vestuário & Dignidade - Roupas, Calçados & Utensílios)**: Peças para Pegue e Leve, brechó solidário e auxílio na montagem de lares (cobertores, lençóis, toalhas, agasalhos, alta procura por roupas e calçados masculinos, roupas infantis, meias, roupas íntimas, pijamas, calçados, móveis, utensílios de cozinha, além de tampinhas plásticas e blisters vazios de medicamentos para reciclagem solidária).
+   - **Card 3 (Infância & Longevidade - Cuidado Infantil e Idosos)**: Apoio direto ao Projeto NanaNenê, mães em vulnerabilidade e acolhimento em asilos de idosos e PCD (fraldas infantis e geriátricas, lenços umedecidos, pomadas, sabonetes, cremes hidratantes, shampoos, enxovais de bebês, berços, colchões, banheiras, carrinhos e brinquedos higienizados).
+   - **Card 4 (Saúde & Higiene - Higiene Pessoal & Limpeza)**: Kits de dignidade e produtos de limpeza para lares acolhidos.
+
+3. **Seção de Projetos em Ação (`#projetos`)**:
+   - **Projeto Pegue e Leve**: Araras comunitárias abertas com atendimento em bairros de Canoas (como Rio Branco e Fátima) e na Região Metropolitana, inclusive em Porto Alegre.
+   - **Bichinhos Caridosos**: Parceria que troca pelúcias por doações e realiza acolhimento comunitário e visitas a instituições de saúde e lares.
+   - **Cestas Básicas & Brechó Solidário**: Sede na Rua Sete Povos, com captação de recursos mantida por associados, pelo brechó e pela tradicional feira do uniforme escolar.
+   - **Projeto NanaNenê (Maternidade Solidária)**: Parceria com grupo de mulheres que montam enxovais para mães vulneráveis de comunidades carentes, com gestão de inscrições e arrecadação pela AAPC. Exibição com foto real tratada e anonimizada (`projeto-nananene.jpg`), preservando a identidade das famílias conforme diretriz da ONG e a LGPD.
+
+4. **Seção Unificada de Engajamento: "Faça Parte da Nossa Causa" (`#faca-parte`)**:
    - **Seletor de Abas Interativo**:
-     - `Quero ser Voluntário`: Ativa o painel de voluntariado com os blocos de ajuda domiciliar/presencial, fotos institucionais autênticas da AAPC, formulário com 11 campos e o acordeão do Termo de Adesão ao Serviço Voluntário (8 artigos da Lei nº 9.608/1998).
-     - `Quero ser Associado`: Ativa o painel de associado contribuinte com gancho de sustentabilidade e independência, seletor de valores mensais em pílulas verdes (`R$ 20,00`, `R$ 50,00`, `R$ 100,00` e `Outro valor`), formulário cadastral completo e consentimentos estatutário e LGPD.
-   - Suporte completo a navegação direta por âncoras (`#voluntariado` e `#associados`), com alternância automática da aba e rolagem suave.
+     - `Quero ser Voluntário`: Ações domiciliares ("sem sair de casa") e presenciais (com entrega de cestas básicas, Pegue e Leve de roupas e cobertores nas comunidades vulneráveis), acervo com fotos reais (La Salle, tricô solidário, entrega de mantimentos), formulário completo e acordeão do Termo de Adesão ao Serviço Voluntário (8 artigos da Lei nº 9.608/1998).
+     - `Quero ser Associado`: Gancho de sustentabilidade sem verbas públicas, benefício de alimentação garantida em parceria com grupos de marmitas, seletor de valores em pílulas verdes (`R$ 20,00`, `R$ 50,00`, `R$ 100,00` e `Outro valor`), formulário cadastral completo e consentimentos estatutário e LGPD.
 
-3. **Acervo Fotográfico Real nos Cards de Colaboração (`#faca-parte`)**:
-   - **Card 1 (Sem sair de casa - Doação de talento e carinho)**: Foto autêntica do trabalho de tricô e crochê solidário feito pelas voluntárias (`trico-croche-solidario.jpg`).
-   - **Card 2 (Ações presenciais - Na sede e nas comunidades)**: Foto dos voluntários com o porta-malas do carro carregado com doações e cestas básicas (`voluntarios-sede-comunidades.jpg`).
-   - **Card 3 (Certificação universitária - Horas complementares)**: Foto nítida e limpa da ação com estudantes da Universidade La Salle (`acao-voluntarios-lasalle.jpg`), sem botão de reprodução de vídeo.
+5. **Localização, Horários & Contato (`#onde-estamos`)**:
+   - **Horários Oficiais de Atendimento na Sede**:
+     - Recebimento de doações: Segunda a quinta-feira, das 14h às 18h.
+     - Entrega de pedidos e Brechó Solidário: Terças e quintas-feiras, das 14h às 18h.
+   - **Ponto de Coleta Parceiro**:
+     - **Loja Essence**: Ao lado da sede da AAPC, com recebimento contínuo em horário comercial.
+   - **Canais Oficiais**:
+     - WhatsApp Geral: `(51) 99270-1114`
+     - Rosa / Coordenação: `(51) 98133-4287`
+     - Instagram Oficial: `@ong_aapc_`
 
-4. **Humanização Textual Rigorosa (Skill `humanizer`)**:
-   - Eliminação de travessões robóticos (`—`), títulos artificiais e formulaicos.
-   - Remoção de todos os emojis decorativos de cabeçalhos, botões e listas, substituindo-os por ícones SVG vetoriais precisos e elegantes.
-   - Tom de voz dinâmico, caloroso, direto e enraizado na realidade comunitária de Canoas/RS.
-
-5. **Motor de Disparo Assíncrono Duplo: E-mail (FormSubmit AJAX) + Planilha Compartilhada (Excel / Google Sheets)**:
+6. **Motor de Disparo Assíncrono Duplo: E-mail (FormSubmit AJAX) + Planilha Compartilhada (Excel / Google Sheets)**:
    - **E-mail**: Notificação instantânea para a coordenação (`osvaldooliveirabello@gmail.com`).
-   - **Planilha Compartilhada**: Suporte nativo a envio em paralelo para endpoint Webhook (`WEBHOOK_PLANILHA_URL`).
-   - Cada preenchimento gera automaticamente uma nova linha na planilha compartilhada do Google Sheets ou Microsoft 365 Excel Online.
+   - **Planilha Compartilhada**: Disparo paralelo para Webhook (`WEBHOOK_PLANILHA_URL`).
 
 ---
 
-## 2. Como Funciona a Integração com Planilha Compartilhada
-
-O sistema foi preparado com **duplo disparo (dual-dispatch)** em `src/main.js`:
-
-```javascript
-const EMAIL_DESTINO_TESTE = 'osvaldooliveirabello@gmail.com';
-const WEBHOOK_PLANILHA_URL = ''; // URL do Webhook do Google Apps Script ou Power Automate
-```
-
-### Opção Recomendada 1: Google Planilhas (Sincronizado / Exportável para Excel)
-1. Crie uma planilha no Google Drive com as colunas: `Data`, `Tipo`, `Nome`, `E-mail`, `Telefone`, `CPF`, `Endereço`, `Detalhes`.
-2. Vá em **Extensões > Apps Script** e cole o seguinte código:
-   ```javascript
-   function doPost(e) {
-     var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
-     var data = JSON.parse(e.postData.contents);
-     sheet.appendRow([
-       new Date(),
-       data.tipo_registro || '',
-       data.nome_completo || '',
-       data.email || '',
-       data.telefone || '',
-       data.cpf || '',
-       data.endereco || '',
-       JSON.stringify(data)
-     ]);
-     return ContentService.createTextOutput(JSON.stringify({result: "success"}))
-       .setMimeType(ContentService.MimeType.JSON);
-   }
-   ```
-3. Clique em **Implantar > Nova Implantação**, selecione **App da Web**, configure acesso para **Qualquer pessoa** e copie a URL gerada para `WEBHOOK_PLANILHA_URL`.
-
-### Opção 2: Microsoft 365 Excel Online (Via Power Automate)
-1. No portal do Power Automate (Office 365), crie um fluxo: **"Quando uma requisição HTTP for recebida"**.
-2. Adicione a ação: **"Excel Online (Business) - Adicionar uma linha em uma tabela"**, apontando para sua pasta de trabalho compartilhada no OneDrive ou SharePoint.
-3. Copie a URL do gatilho HTTP gerada e cole em `WEBHOOK_PLANILHA_URL`.
-
----
-
-## 3. Matriz de Arquivos do Projeto
+## 2. Matriz de Arquivos do Projeto
 
 | Arquivo | Função |
 | :--- | :--- |
-| `index.html` | Estrutura semântica completa: Hero, Hub Como Ajudar, História, Doações, Projetos, Associados, Voluntariado com Termo oficial, PIX e Sede |
-| `src/style.css` | Design System com tokens, Poppins/DM Sans, cores oficiais, componentes de formulário, pílulas de valor e responsividade mobile estrita |
+| `index.html` | Estrutura semântica completa: Hero, Hub Como Ajudar, História, Doações com Cesta Slim e Idosos, Projetos com NanaNenê, Associados, Voluntariado, PIX e Sede com Loja Essence e Rosa |
+| `src/style.css` | Design System com tokens, Poppins/DM Sans, cores oficiais, cards de projetos, badges de ponto de coleta parceiro e responsividade mobile estrita |
 | `src/main.js` | Disparo AJAX via FormSubmit e Planilha Compartilhada, máscaras, seletores de valor, acordeão do termo, cópia do PIX e menu mobile |
-| `public/img/fotos/acao-voluntarios-lasalle.jpg` | Foto real limpa (sem play) dos voluntários com a Universidade La Salle |
+| `public/img/fotos/projeto-nananene.jpg` | Foto real tratada e anonimizada do Projeto NanaNenê (laço lilás e identidade oficial) |
+| `public/img/fotos/acao-voluntarios-lasalle.jpg` | Foto real limpa dos voluntários com a Universidade La Salle |
 | `public/img/fotos/trico-croche-solidario.jpg` | Foto real dos trabalhos manuais de tricô e crochê solidário para o inverno |
-| `public/img/fotos/voluntarios-sede-comunidades.jpg` | Foto real da entrega direta de alimentos e cestas básicas com o porta-malas do carro |
-| `scripts/verify_forms.py` | Script de teste automatizado Playwright (Desktop 1366px e Mobile 375px) |
+| `public/img/fotos/voluntarios-sede-comunidades.jpg` | Foto real da entrega direta de alimentos e cestas básicas no porta-malas |
+| `scripts/verify_forms.py` | Suite de testes automatizados Playwright com validação de doações, projetos, horários e responsividade |
 
 ---
 
-## 4. Evidências de Teste e Validação
+## 3. Evidências de Teste e Validação
 
 - **Viewport Mobile (375px x 812px)**: Zero scroll horizontal (`scrollWidth === clientWidth === 375px`).
 - **Viewport Desktop (1366px x 900px)**:
-  - Header da seção sem travessão robótico: *"Você pode ajudar de várias formas, até mesmo sem sair de casa"*.
-  - Os 3 cards com as 3 fotos reais perfeitamente enquadradas (altura 160px, zoom no hover).
-  - Ícones SVG vetoriais substituindo 100% dos emojis anteriores.
-- **Build de Produção**: `npm run build` gerando bundle limpo em `dist/` em 1.95s com 0 erros.fication_forms/mobile_como_ajudar.png`
-  - `artifacts/verification_forms/mobile_associados.png`
-  - `artifacts/verification_forms/mobile_voluntariado.png`
+  - 4 cards de doações com alinhamento visual perfeito e conteúdo detalhado.
+  - 4 cards de projetos sociais incluindo Projeto NanaNenê, Pegue e Leve metropolitano e Bichinhos Caridosos.
+  - Card de atendimento com horários das 14h às 18h e destaque do Ponto de Coleta Parceiro Loja Essence.
+  - Canal direto da Rosa (Coordenação) integrado aos canais oficiais e rodapé.
+- **Build de Produção**: `npm run build` gerando bundle limpo em `dist/` em 1.73s com 0 erros.
+- **Evidências Fotográficas**:
+  - `artifacts/verification_forms/desktop_projetos_nananene.png`
+  - `artifacts/verification_forms/desktop_doacoes_slim.png`
+  - `artifacts/verification_forms/desktop_sede_horarios_essence.png`
+  - `artifacts/verification_forms/mobile_projetos_nananene.png`
+  - `artifacts/verification_forms/mobile_sede_horarios.png`

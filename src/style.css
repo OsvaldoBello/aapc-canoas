@@ -1912,6 +1912,36 @@ button, input, select, textarea {
   border-top: 1px solid var(--borda-suave);
 }
 
+.ponto-coleta-extra {
+  margin-top: 14px;
+  padding: 12px 14px;
+  background-color: var(--verde-suave);
+  border: 1px dashed rgba(0, 150, 57, 0.35);
+  border-radius: var(--radius-sm);
+  text-align: center;
+}
+
+.tag-parceiro-coleta {
+  display: inline-block;
+  font-family: var(--fonte-display);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--verde-aapc);
+  background: #FFFFFF;
+  padding: 2px 8px;
+  border-radius: 20px;
+  margin-bottom: 6px;
+}
+
+.ponto-coleta-extra p {
+  font-size: 13.5px;
+  color: var(--tinta);
+  line-height: 1.45;
+  margin: 0;
+}
+
 .link-mapa, .link-contato {
   display: inline-block;
   margin-top: 16px;
